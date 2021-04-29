@@ -1,0 +1,9 @@
+tk.michaelmckey.microcontrollerremote.connection
+tk.michaelmckey.microcontrollerremote.db
+tk.michaelmckey.microcontrollerremote.db.dao
+tk.michaelmckey.microcontrollerremote.db.entity
+tk.michaelmckey.microcontrollerremote.recyclerview
+tk.michaelmckey.microcontrollerremote.ui.commands
+tk.michaelmckey.microcontrollerremote.ui.current_remote
+tk.michaelmckey.microcontrollerremote.ui.main
+tk.michaelmckey.microcontrollerremote.ui.remotes

@@ -1,0 +1,152 @@
+<!--
+  ~ MIT License
+  ~
+  ~ Copyright (c) 2021 Michael McKey (michaelmckey123@protonmail.com)
+  ~
+  ~ Permission is hereby granted, free of charge, to any person obtaining a copy
+  ~ of this software and associated documentation files (the "Software"), to deal
+  ~ in the Software without restriction, including without limitation the rights
+  ~ to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+  ~ copies of the Software, and to permit persons to whom the Software is
+  ~ furnished to do so, subject to the following conditions:
+  ~
+  ~ The above copyright notice and this permission notice shall be included in all
+  ~ copies or substantial portions of the Software.
+  ~
+  ~ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  ~ IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  ~ FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+  ~ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  ~ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+  ~ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+  ~ SOFTWARE.
+  -->
+
+<resources>
+    <string name="app_name" translatable="false">MC Remote</string>
+    <string name="nav_header_title" translatable="false">Michael McKey</string>
+    <string name="nav_header_subtitle" translatable="false">michaelmckey123@protonmail.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+
+    <string name="button_lang_text">lang</string>
+    <string name="button_fav_text">fav</string>
+    <string name="button_green_text">green</string>
+    <string name="button_tv_radio_text">tv/radio</string>
+    <string name="button_info_text">INFO</string>
+    <string name="button_8_text">8</string>
+    <string name="button_rewind_text">rewind</string>
+    <string name="button_power_text">power</string>
+    <string name="button_play_text">play</string>
+    <string name="button_menu_text">menu</string>
+    <string name="button_3_text">3</string>
+    <string name="button_left_text">left</string>
+    <string name="button_epg_text">EPG</string>
+    <string name="button_7_text">7</string>
+    <string name="button_4_text">4</string>
+    <string name="button_list_text">list</string>
+    <string name="button_pvr_text">PVR</string>
+    <string name="button_red_text">red</string>
+    <string name="button_1_text">1</string>
+    <string name="button_mute_text">mute</string>
+    <string name="button_0_text">0</string>
+    <string name="button_recall_text">recall</string>
+    <string name="button_6_text">6</string>
+    <string name="button_ttx_text">TTX</string>
+    <string name="button_timeshift_text">timeshift</string>
+    <string name="button_up_text">up</string>
+    <string name="button_timer_text">timer</string>
+    <string name="button_right_text">right</string>
+    <string name="button_down_text">down</string>
+    <string name="button_exit_text">exit</string>
+    <string name="button_v_format_text">v-format</string>
+    <string name="button_aspect_text">aspect</string>
+    <string name="button_record_text">record</string>
+    <string name="button_pause_text">pause</string>
+    <string name="button_stop_text">stop</string>
+    <string name="button_skip_text">skip</string>
+    <string name="button_next_text">next</string>
+    <string name="button_previous_text">previous</string>
+    <string name="button_yellow_text">yellow</string>
+    <string name="button_blue_text">blue</string>
+    <string name="button_2_text">2</string>
+    <string name="button_5_text">5</string>
+    <string name="button_subtitle_text">subtitle</string>
+    <string name="button_9_text">9</string>
+
+    <string name="usb_permission_denied_message">Permission required to connect</string>
+    <string name="device_detached_message">Device disconnected!</string>
+    <string name="no_device_connected">No device detected</string>
+    <string name="error_creating_port">Error creating a port</string>
+
+    <string name="menu_current_remote">Current Remote</string>
+    <string name="menu_remotes">Remotes</string>
+    <string name="menu_commands">Commands</string>
+    <string name="menu_quick_actions">Others</string>
+    <string name="menu_licences">Licences</string>
+
+    <string name="FAB_content_description">A floating Action button</string>
+
+    <string name="message">Message</string>
+    <string name="date">Date</string>
+
+    <string name="title">Title</string>
+    <string name="contents">Contents</string>
+    <string name="time">Time</string>
+    <string name="delete">Delete</string>
+    <string name="select">Select</string>
+    <string name="sort_by">Sort by</string>
+
+
+    <string name="action_edit">Edit</string>
+    <string name="action_duplicate">Duplicate</string>
+    <string name="change_associated_code_text">Change</string>
+    <string name="action_search">Search</string>
+    <string name="order_textView_text">Order</string>
+    <string name="ascending_radio_button_text">Ascending</string>
+    <string name="descending_radio_button_text">Descending</string>
+    <string name="deleted">DELETED</string>
+    <string name="layout_type_hint">Layout type</string>
+    <string name="button_volume_up_text">volume up</string>
+    <string name="button_back_text">back</string>
+    <string name="button_home_text">home</string>
+    <string name="button_fast_forward_text">fast forward</string>
+    <string name="button_volume_down_text">volume down</string>
+
+    <string name="connection_mode_hint">Connection mode</string>
+    <string name="connection_info_hint">Connection info</string>
+    <string name="remote_editor_browse_text">Scan</string>
+    <string name="bluetooth_device_selector_device_label">Devices</string>
+    <string name="commands_fragment_add_new_code_dialog_title">New Code</string>
+    <string name="modify_code_dialog">Modify Code</string>
+    <string name="called_for_result_title">CHANGE TO…</string>
+    <string name="select_device">Select device</string>
+    <string name="new_remote">New Remote</string>
+    <string name="modify_remote">Modify Remote</string>
+    <string name="current_remote_fragment_prefix">"Remote: "</string>
+    <string name="button_not_assigned">This button isn\'t assigned to a code</string>
+    <string name="baud_rate">BAUD rate</string>
+    <string name="url">URL</string>
+    <string name="mac_address">MAC address</string>
+    <string name="select_items">SELECT ITEMS</string>
+    <string name="received_message_key">received_message</string>
+    <string name="date_format">d MMM   HH:mma</string>
+    <string name="button_info">Button info</string>
+    <string name="copy_suffix">" copy"</string>
+
+    <string name="turn_on_bluetooth">Please turn on bluetooth</string>
+    <string name="mac_address_is_empty">Mac Address is empty</string>
+    <string name="io_exception">IO Exception occurred</string>
+    <string name="not_connected">Not connected</string>
+    <string name="serial_permission_not_granted">Serial permission not granted</string>
+    <string name="invalid_bluetooth_address">Invalid Bluetooth Address</string>
+    <string name="baud_rate_zero_error">The BAUD rate should be greater than zero</string>
+    <string name="baud_rate_blank_error">The BAUD rate can\'t be blank</string>
+    <string name="baud_rate_not_int_error">The BAUD rate should be an integer</string>
+    <string name="invalid_url_error">The URL entered isn\'t a valid</string>
+    <string name="invalid_mac_address_error">The MAC address entered isn\'t valid</string>
+    <string name="button_spanish_text">Spanish</string>
+    <string name="button_french_text">French</string>
+    <string name="button_calibrate_text">Calibrate</string>
+    <string name="button_english_text">English</string>
+    <string name="connecting">Connecting…</string>
+</resources>
