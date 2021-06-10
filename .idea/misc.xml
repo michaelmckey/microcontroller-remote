@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CMakeSettings">
+    <configurations>
+      <configuration PROFILE_NAME="Debug" CONFIG_NAME="Debug" />
+    </configurations>
+  </component>
+  <component name="EntryPointsManager">
+    <entry_points version="2.0">
+      <entry_point TYPE="field" FQNAME="tk.michaelmckey.microcontrollerremote.dialogfragments.BluetoothDeviceDialog mMacAddress" />
+      <entry_point TYPE="field" FQNAME="tk.michaelmckey.microcontrollerremote.dialogfragments.BluetoothDeviceDialog TAG" />
+      <entry_point TYPE="field" FQNAME="tk.michaelmckey.microcontrollerremote.dialogfragments.ButtonEditorDialog mChosenButton" />
+      <entry_point TYPE="field" FQNAME="tk.michaelmckey.microcontrollerremote.dialogfragments.ButtonEditorDialog mCode" />
+      <entry_point TYPE="field" FQNAME="tk.michaelmckey.microcontrollerremote.dialogfragments.ButtonEditorDialog TAG" />
+      <entry_point TYPE="field" FQNAME="tk.michaelmckey.microcontrollerremote.dialogfragments.CodeEditorDialog mCode" />
+      <entry_point TYPE="field" FQNAME="tk.michaelmckey.microcontrollerremote.dialogfragments.SortByDialog mOrder" />
+      <entry_point TYPE="field" FQNAME="tk.michaelmckey.microcontrollerremote.dialogfragments.SortByDialog mSortBy" />
+      <entry_point TYPE="field" FQNAME="tk.michaelmckey.microcontrollerremote.recyclerview.RecyclerViewHolder DATE_FORMAT" />
+      <entry_point TYPE="field" FQNAME="tk.michaelmckey.microcontrollerremote.recyclerview.RecyclerViewHolder mAdapter" />
+      <entry_point TYPE="field" FQNAME="tk.michaelmckey.microcontrollerremote.recyclerview.RecyclerViewHolder mBinding" />
+      <entry_point TYPE="field" FQNAME="tk.michaelmckey.microcontrollerremote.recyclerview.RecyclerViewHolder mObject" />
+      <entry_point TYPE="field" FQNAME="tk.michaelmckey.microcontrollerremote.recyclerview.RecyclerViewHolder mSelected" />
+      <entry_point TYPE="field" FQNAME="tk.michaelmckey.microcontrollerremote.dialogfragments.RemoteEditorDialog mConnectionInfoBluetooth" />
+      <entry_point TYPE="field" FQNAME="tk.michaelmckey.microcontrollerremote.dialogfragments.RemoteEditorDialog mConnectionInfoSerial" />
+      <entry_point TYPE="field" FQNAME="tk.michaelmckey.microcontrollerremote.dialogfragments.RemoteEditorDialog mConnectionInfoWifi" />
+      <entry_point TYPE="field" FQNAME="tk.michaelmckey.microcontrollerremote.dialogfragments.RemoteEditorDialog mLastSelectedMethod" />
+      <entry_point TYPE="field" FQNAME="tk.michaelmckey.microcontrollerremote.dialogfragments.RemoteEditorDialog mRemote" />
+      <entry_point TYPE="field" FQNAME="tk.michaelmckey.microcontrollerremote.ui.MainActivity mDrawer" />
+      <entry_point TYPE="field" FQNAME="tk.michaelmckey.microcontrollerremote.ui.MainActivity mMainActivityViewModel" />
+      <entry_point TYPE="field" FQNAME="tk.michaelmckey.microcontrollerremote.ui.MainActivity mNavController" />
+      <entry_point TYPE="field" FQNAME="tk.michaelmckey.microcontrollerremote.ui.CurrentRemoteFragment mRemoteLayoutContainer" />
+      <entry_point TYPE="field" FQNAME="tk.michaelmckey.microcontrollerremote.recyclerview.RecyclerFragment mMainActivityViewModel" />
+      <entry_point TYPE="field" FQNAME="tk.michaelmckey.microcontrollerremote.recyclerview.RecyclerFragment mMultiSelectAvailable" />
+      <entry_point TYPE="field" FQNAME="tk.michaelmckey.microcontrollerremote.recyclerview.RecyclerFragment mRecyclerView" />
+      <entry_point TYPE="field" FQNAME="tk.michaelmckey.microcontrollerremote.recyclerview.RecyclerFragment mRecyclerViewModel" />
+      <entry_point TYPE="field" FQNAME="tk.michaelmckey.microcontrollerremote.ui.main.MainActivity mDrawer" />
+      <entry_point TYPE="field" FQNAME="tk.michaelmckey.microcontrollerremote.ui.main.MainActivity mMainActivityViewModel" />
+      <entry_point TYPE="field" FQNAME="tk.michaelmckey.microcontrollerremote.ui.main.MainActivity mNavController" />
+      <entry_point TYPE="field" FQNAME="tk.michaelmckey.microcontrollerremote.ui.current_remote.CurrentRemoteFragment mConnectingToast" />
+      <entry_point TYPE="field" FQNAME="tk.michaelmckey.microcontrollerremote.ui.current_remote.CurrentRemoteFragment mReceivedMessageToast" />
+      <entry_point TYPE="field" FQNAME="tk.michaelmckey.microcontrollerremote.ui.current_remote.CurrentRemoteFragment mRemoteLayoutContainer" />
+      <entry_point TYPE="field" FQNAME="tk.michaelmckey.microcontrollerremote.ui.remotes.BluetoothDeviceDialog mMacAddress" />
+      <entry_point TYPE="field" FQNAME="tk.michaelmckey.microcontrollerremote.ui.remotes.BluetoothDeviceDialog TAG" />
+      <entry_point TYPE="field" FQNAME="tk.michaelmckey.microcontrollerremote.ui.current_remote.ButtonEditorDialog mChosenButton" />
+      <entry_point TYPE="field" FQNAME="tk.michaelmckey.microcontrollerremote.ui.current_remote.ButtonEditorDialog mCode" />
+      <entry_point TYPE="field" FQNAME="tk.michaelmckey.microcontrollerremote.ui.current_remote.ButtonEditorDialog TAG" />
+      <entry_point TYPE="field" FQNAME="tk.michaelmckey.microcontrollerremote.ui.commands.CodeEditorDialog mCode" />
+      <entry_point TYPE="field" FQNAME="tk.michaelmckey.microcontrollerremote.ui.remotes.RemoteEditorDialog mConnectionInfoBluetooth" />
+      <entry_point TYPE="field" FQNAME="tk.michaelmckey.microcontrollerremote.ui.remotes.RemoteEditorDialog mConnectionInfoSerial" />
+      <entry_point TYPE="field" FQNAME="tk.michaelmckey.microcontrollerremote.ui.remotes.RemoteEditorDialog mConnectionInfoWifi" />
+      <entry_point TYPE="field" FQNAME="tk.michaelmckey.microcontrollerremote.ui.remotes.RemoteEditorDialog mLastSelectedMethod" />
+      <entry_point TYPE="field" FQNAME="tk.michaelmckey.microcontrollerremote.ui.remotes.RemoteEditorDialog mRemote" />
+      <entry_point TYPE="field" FQNAME="tk.michaelmckey.microcontrollerremote.recyclerview.SortByDialog mOrder" />
+      <entry_point TYPE="field" FQNAME="tk.michaelmckey.microcontrollerremote.recyclerview.SortByDialog mSortBy" />
+      <entry_point TYPE="field" FQNAME="tk.michaelmckey.microcontrollerremote.db.entity.CodeEntity id" />
+      <entry_point TYPE="field" FQNAME="tk.michaelmckey.microcontrollerremote.db.entity.RemoteEntity id" />
+      <entry_point TYPE="field" FQNAME="tk.michaelmckey.microcontrollerremote.db.Layout LARGE" />
+      <entry_point TYPE="field" FQNAME="tk.michaelmckey.microcontrollerremote.recyclerview.RecyclerAdapter mActionModeCallbacks" />
+      <entry_point TYPE="field" FQNAME="tk.michaelmckey.microcontrollerremote.recyclerview.RecyclerAdapter mDataFiltered" />
+      <entry_point TYPE="field" FQNAME="tk.michaelmckey.microcontrollerremote.db.Layout MEDIUM" />
+      <entry_point TYPE="field" FQNAME="tk.michaelmckey.microcontrollerremote.recyclerview.RecyclerAdapter mMultiSelect" />
+      <entry_point TYPE="field" FQNAME="tk.michaelmckey.microcontrollerremote.recyclerview.RecyclerAdapter mMultiSelectAvailable" />
+      <entry_point TYPE="field" FQNAME="tk.michaelmckey.microcontrollerremote.recyclerview.RecyclerAdapter mRecyclerSelectionListener" />
+      <entry_point TYPE="field" FQNAME="tk.michaelmckey.microcontrollerremote.recyclerview.RecyclerAdapter mRecyclerView" />
+      <entry_point TYPE="field" FQNAME="tk.michaelmckey.microcontrollerremote.recyclerview.RecyclerAdapter mSelectedItems" />
+      <entry_point TYPE="field" FQNAME="tk.michaelmckey.microcontrollerremote.ui.current_remote.ChosenButton NEGATIVE" />
+      <entry_point TYPE="field" FQNAME="tk.michaelmckey.microcontrollerremote.ui.current_remote.ChosenButton NEUTRAL" />
+      <entry_point TYPE="field" FQNAME="tk.michaelmckey.microcontrollerremote.ui.current_remote.ChosenButton POSITIVE" />
+      <entry_point TYPE="field" FQNAME="tk.michaelmckey.microcontrollerremote.db.Layout TOY" />
+      <entry_point TYPE="field" FQNAME="tk.michaelmckey.microcontrollerremote.db.Layout LIGHTS" />
+    </entry_points>
+    <pattern value="tk.michaelmckey.microcontrollerremote.db.entity.RemoteEntity" method="getTime" />
+    <pattern value="tk.michaelmckey.microcontrollerremote.connection.Connection" method="connect" />
+    <pattern value="tk.michaelmckey.microcontrollerremote.connection.Connection" />
+    <pattern value="tk.michaelmckey.microcontrollerremote.connection.Connection" method="disconnect" />
+    <pattern value="tk.michaelmckey.microcontrollerremote.connection.Connection" method="sendMessage" />
+    <pattern value="tk.michaelmckey.microcontrollerremote.MainActivityViewModel" method="MainActivityViewModel" />
+    <pattern value="tk.michaelmckey.microcontrollerremote.MainActivityViewModel" method="createRemote" />
+    <pattern value="tk.michaelmckey.microcontrollerremote.MainActivityViewModel" method="delete" />
+    <pattern value="tk.michaelmckey.microcontrollerremote.MainActivityViewModel" method="duplicate" />
+    <pattern value="tk.michaelmckey.microcontrollerremote.MainActivityViewModel" method="insert" />
+    <pattern value="tk.michaelmckey.microcontrollerremote.MainActivityViewModel" />
+    <pattern value="tk.michaelmckey.microcontrollerremote.MainActivityViewModel" method="update" />
+    <pattern value="tk.michaelmckey.microcontrollerremote.ui.MainActivityViewModel" method="delete" />
+    <pattern value="tk.michaelmckey.microcontrollerremote.ui.MainActivityViewModel" method="duplicate" />
+    <pattern value="tk.michaelmckey.microcontrollerremote.ui.MainActivityViewModel" method="getAllCodes" />
+    <pattern value="tk.michaelmckey.microcontrollerremote.ui.MainActivityViewModel" method="getAllRemotes" />
+    <pattern value="tk.michaelmckey.microcontrollerremote.ui.MainActivityViewModel" method="insert" />
+    <pattern value="tk.michaelmckey.microcontrollerremote.ui.MainActivityViewModel" />
+    <pattern value="tk.michaelmckey.microcontrollerremote.ui.MainActivityViewModel" method="MainActivityViewModel" />
+    <pattern value="tk.michaelmckey.microcontrollerremote.ui.MainActivityViewModel" method="update" />
+    <pattern value="tk.michaelmckey.microcontrollerremote.dialogfragments.BluetoothDeviceDialog" />
+    <pattern value="tk.michaelmckey.microcontrollerremote.dialogfragments.BluetoothDeviceDialog" method="getMacAddress" />
+    <pattern value="tk.michaelmckey.microcontrollerremote.dialogfragments.ButtonEditorDialog" />
+    <pattern value="tk.michaelmckey.microcontrollerremote.dialogfragments.ButtonEditorDialog" method="ButtonEditorDialog" />
+    <pattern value="tk.michaelmckey.microcontrollerremote.dialogfragments.ButtonEditorDialog" method="getChosenOption" />
+    <pattern value="tk.michaelmckey.microcontrollerremote.dialogfragments.CodeEditorDialog" />
+    <pattern value="tk.michaelmckey.microcontrollerremote.connection.ConnectionManager" />
+    <pattern value="tk.michaelmckey.microcontrollerremote.connection.ConnectionManager" method="getBluetoothDevices" />
+    <pattern value="tk.michaelmckey.microcontrollerremote.recyclerview.RecyclerViewModel" method="getRecyclerViewPosition" />
+    <pattern value="tk.michaelmckey.microcontrollerremote.recyclerview.RecyclerViewModel" />
+    <pattern value="tk.michaelmckey.microcontrollerremote.dialogfragments.SortByDialog" />
+    <pattern value="tk.michaelmckey.microcontrollerremote.recyclerview.RecyclerViewHolder" method="bind" />
+    <pattern value="tk.michaelmckey.microcontrollerremote.recyclerview.RecyclerViewHolder" />
+    <pattern value="tk.michaelmckey.microcontrollerremote.recyclerview.RecyclerViewHolder" method="RecyclerViewHolder" />
+    <pattern value="tk.michaelmckey.microcontrollerremote.recyclerview.RecyclerViewHolder" method="setSelected" />
+    <pattern value="tk.michaelmckey.microcontrollerremote.dialogfragments.RemoteEditorDialog" method="bluetoothDeviceSelector" />
+    <pattern value="tk.michaelmckey.microcontrollerremote.dialogfragments.RemoteEditorDialog" />
+    <pattern value="tk.michaelmckey.microcontrollerremote.ui.MainActivity" />
+    <pattern value="tk.michaelmckey.microcontrollerremote.ui.CurrentRemoteViewModel" method="addConnectionListener" />
+    <pattern value="tk.michaelmckey.microcontrollerremote.ui.CurrentRemoteViewModel" method="connect" />
+    <pattern value="tk.michaelmckey.microcontrollerremote.ui.CurrentRemoteViewModel" />
+    <pattern value="tk.michaelmckey.microcontrollerremote.ui.CurrentRemoteViewModel" method="getCodesWithMessage" />
+    <pattern value="tk.michaelmckey.microcontrollerremote.ui.CurrentRemoteViewModel" method="getCorrespondingCode" />
+    <pattern value="tk.michaelmckey.microcontrollerremote.ui.CurrentRemoteViewModel" method="insert" />
+    <pattern value="tk.michaelmckey.microcontrollerremote.ui.CurrentRemoteViewModel" method="removeConnectionListener" />
+    <pattern value="tk.michaelmckey.microcontrollerremote.ui.CurrentRemoteViewModel" method="sendMessage" />
+    <pattern value="tk.michaelmckey.microcontrollerremote.ui.CurrentRemoteViewModel" method="setButtonResourceName" />
+    <pattern value="tk.michaelmckey.microcontrollerremote.ui.CurrentRemoteFragment" />
+    <pattern value="tk.michaelmckey.microcontrollerremote.ui.CurrentRemoteFragment" method="modifyButton" />
+    <pattern value="tk.michaelmckey.microcontrollerremote.ui.CurrentRemoteFragment" method="remoteButtonClicked" />
+    <pattern value="tk.michaelmckey.microcontrollerremote.ui.CurrentRemoteFragment" method="setupButton" />
+    <pattern value="tk.michaelmckey.microcontrollerremote.recyclerview.RecyclerFragment" />
+    <pattern value="tk.michaelmckey.microcontrollerremote.recyclerview.RecyclerFragment" method="sortBy" />
+    <pattern value="tk.michaelmckey.microcontrollerremote.ui.main.MainActivity" />
+    <pattern value="tk.michaelmckey.microcontrollerremote.ui.current_remote.CurrentRemoteFragment" method="remoteButtonClicked" />
+    <pattern value="tk.michaelmckey.microcontrollerremote.ui.current_remote.CurrentRemoteFragment" method="setupButton" />
+    <pattern value="tk.michaelmckey.microcontrollerremote.ui.current_remote.CurrentRemoteFragment" method="modifyButton" />
+    <pattern value="tk.michaelmckey.microcontrollerremote.ui.current_remote.CurrentRemoteViewModel" method="addConnectionListener" />
+    <pattern value="tk.michaelmckey.microcontrollerremote.ui.current_remote.CurrentRemoteViewModel" method="connect" />
+    <pattern value="tk.michaelmckey.microcontrollerremote.ui.current_remote.CurrentRemoteViewModel" />
+    <pattern value="tk.michaelmckey.microcontrollerremote.ui.current_remote.CurrentRemoteViewModel" method="getCodesWithMessage" />
+    <pattern value="tk.michaelmckey.microcontrollerremote.ui.current_remote.CurrentRemoteViewModel" method="getCorrespondingCode" />
+    <pattern value="tk.michaelmckey.microcontrollerremote.ui.current_remote.CurrentRemoteViewModel" method="insert" />
+    <pattern value="tk.michaelmckey.microcontrollerremote.ui.current_remote.CurrentRemoteViewModel" method="removeConnectionListener" />
+    <pattern value="tk.michaelmckey.microcontrollerremote.ui.current_remote.CurrentRemoteViewModel" method="sendMessage" />
+    <pattern value="tk.michaelmckey.microcontrollerremote.ui.current_remote.CurrentRemoteViewModel" method="setButtonResourceName" />
+    <pattern value="tk.michaelmckey.microcontrollerremote.ui.main.MainActivityViewModel" method="delete" />
+    <pattern value="tk.michaelmckey.microcontrollerremote.ui.main.MainActivityViewModel" method="duplicate" />
+    <pattern value="tk.michaelmckey.microcontrollerremote.ui.main.MainActivityViewModel" method="getAllCodes" />
+    <pattern value="tk.michaelmckey.microcontrollerremote.ui.main.MainActivityViewModel" method="getAllRemotes" />
+    <pattern value="tk.michaelmckey.microcontrollerremote.ui.main.MainActivityViewModel" method="insert" />
+    <pattern value="tk.michaelmckey.microcontrollerremote.ui.main.MainActivityViewModel" />
+    <pattern value="tk.michaelmckey.microcontrollerremote.ui.main.MainActivityViewModel" method="MainActivityViewModel" />
+    <pattern value="tk.michaelmckey.microcontrollerremote.ui.main.MainActivityViewModel" method="update" />
+    <pattern value="tk.michaelmckey.microcontrollerremote.ui.remotes.BluetoothDeviceDialog" />
+    <pattern value="tk.michaelmckey.microcontrollerremote.ui.remotes.BluetoothDeviceDialog" method="getMacAddress" />
+    <pattern value="tk.michaelmckey.microcontrollerremote.ui.current_remote.ButtonEditorDialog" />
+    <pattern value="tk.michaelmckey.microcontrollerremote.ui.current_remote.ButtonEditorDialog" method="ButtonEditorDialog" />
+    <pattern value="tk.michaelmckey.microcontrollerremote.ui.current_remote.ButtonEditorDialog" method="getChosenOption" />
+    <pattern value="tk.michaelmckey.microcontrollerremote.ui.commands.CodeEditorDialog" />
+    <pattern value="tk.michaelmckey.microcontrollerremote.ui.remotes.RemoteEditorDialog" />
+    <pattern value="tk.michaelmckey.microcontrollerremote.recyclerview.SortByDialog" />
+    <pattern value="tk.michaelmckey.microcontrollerremote.ui.current_remote.ChosenButton" />
+    <pattern value="tk.michaelmckey.microcontrollerremote.db.dao.CodeDao" />
+    <pattern value="tk.michaelmckey.microcontrollerremote.db.entity.CodeEntity" />
+    <pattern value="tk.michaelmckey.microcontrollerremote.ui.commands.CommandsFragment" />
+    <pattern value="tk.michaelmckey.microcontrollerremote.connection.SerialConnection" method="connect" />
+    <pattern value="tk.michaelmckey.microcontrollerremote.connection.WiFiConnection" method="connect" />
+    <pattern value="tk.michaelmckey.microcontrollerremote.db.DataRepository" method="createLayoutFromMessages" />
+    <pattern value="tk.michaelmckey.microcontrollerremote.ui.current_remote.CurrentRemoteFragment" />
+    <pattern value="tk.michaelmckey.microcontrollerremote.ui.current_remote.CurrentRemoteViewModel" method="CurrentRemoteViewModel" />
+    <pattern value="tk.michaelmckey.microcontrollerremote.db.DataRepository" />
+    <pattern value="tk.michaelmckey.microcontrollerremote.connection.SerialConnection" method="disconnect" />
+    <pattern value="tk.michaelmckey.microcontrollerremote.connection.WiFiConnection" method="disconnect" />
+    <pattern value="tk.michaelmckey.microcontrollerremote.recyclerview.RecyclerAdapter" method="filter" />
+    <pattern value="tk.michaelmckey.microcontrollerremote.recyclerview.RecyclerAdapter" method="getSelectionState" />
+    <pattern value="tk.michaelmckey.microcontrollerremote.recyclerview.RecyclerElement" method="getTime" />
+    <pattern value="tk.michaelmckey.microcontrollerremote.recyclerview.RecyclerElement" method="getTitle" />
+    <pattern value="tk.michaelmckey.microcontrollerremote.ui.remotes.RemotesFragment" />
+    <pattern value="tk.michaelmckey.microcontrollerremote.db.Layout" />
+    <pattern value="tk.michaelmckey.microcontrollerremote.recyclerview.RecyclerAdapter" method="normalClick" />
+    <pattern value="tk.michaelmckey.microcontrollerremote.recyclerview.RecyclerSelectionListener" method="normalClick" />
+    <pattern value="tk.michaelmckey.microcontrollerremote.recyclerview.RecyclerAdapter" />
+    <pattern value="tk.michaelmckey.microcontrollerremote.recyclerview.RecyclerElement" />
+    <pattern value="tk.michaelmckey.microcontrollerremote.recyclerview.RecyclerSelectionListener" />
+    <pattern value="tk.michaelmckey.microcontrollerremote.db.dao.RemoteDao" />
+    <pattern value="tk.michaelmckey.microcontrollerremote.db.entity.RemoteEntity" />
+    <pattern value="tk.michaelmckey.microcontrollerremote.recyclerview.RecyclerAdapter" method="scrollTo" />
+    <pattern value="tk.michaelmckey.microcontrollerremote.recyclerview.RecyclerSelectionListener" method="selectionChanged" />
+    <pattern value="tk.michaelmckey.microcontrollerremote.connection.SerialConnection" method="sendMessage" />
+    <pattern value="tk.michaelmckey.microcontrollerremote.connection.SerialConnection" />
+    <pattern value="tk.michaelmckey.microcontrollerremote.connection.SerialConnection" method="SerialConnection" />
+    <pattern value="tk.michaelmckey.microcontrollerremote.db.entity.RemoteEntity" method="setConnectionInfo" />
+    <pattern value="tk.michaelmckey.microcontrollerremote.db.entity.RemoteEntity" method="setConnectionMethod" />
+    <pattern value="tk.michaelmckey.microcontrollerremote.db.entity.RemoteEntity" method="setLayoutType" />
+    <pattern value="tk.michaelmckey.microcontrollerremote.db.entity.CodeEntity" method="setMessage" />
+    <pattern value="tk.michaelmckey.microcontrollerremote.recyclerview.RecyclerAdapter" method="setMultiSelect" />
+    <pattern value="tk.michaelmckey.microcontrollerremote.recyclerview.RecyclerAdapter" method="setMultiSelectAvailable" />
+    <pattern value="tk.michaelmckey.microcontrollerremote.recyclerview.RecyclerAdapter" method="setOrder" />
+    <pattern value="tk.michaelmckey.microcontrollerremote.recyclerview.RecyclerAdapter" method="setSelectionState" />
+    <pattern value="tk.michaelmckey.microcontrollerremote.recyclerview.RecyclerAdapter" method="setSortBy" />
+    <pattern value="tk.michaelmckey.microcontrollerremote.db.entity.CodeEntity" method="setTitle" />
+    <pattern value="tk.michaelmckey.microcontrollerremote.db.entity.RemoteEntity" method="setTitle" />
+    <pattern value="tk.michaelmckey.microcontrollerremote.recyclerview.RecyclerAdapter" method="startSupportActionMode" />
+    <pattern value="tk.michaelmckey.microcontrollerremote.recyclerview.RecyclerAdapter" method="updateData" />
+    <pattern value="tk.michaelmckey.microcontrollerremote.connection.WiFiConnection" />
+    <pattern value="tk.michaelmckey.microcontrollerremote.connection.WiFiConnection" method="WiFiConnection" />
+    <pattern value="tk.michaelmckey.microcontrollerremote.ui.commands.CommandsFragment" method="normalClick" />
+    <pattern value="tk.michaelmckey.microcontrollerremote.ui.remotes.RemotesFragment" method="normalClick" />
+  </component>
+  <component name="JavadocGenerationManager">
+    <option name="OUTPUT_DIRECTORY" value="$PROJECT_DIR$/../../../microcontroller_remote/JavaDocs" />
+    <option name="OPTION_SCOPE" value="private" />
+    <option name="OPTION_DOCUMENT_TAG_USE" value="true" />
+    <option name="OPTION_DOCUMENT_TAG_AUTHOR" value="true" />
+    <option name="OPTION_DOCUMENT_TAG_VERSION" value="true" />
+    <option name="OPTION_INCLUDE_LIBS" value="true" />
+  </component>
+  <component name="NullableNotNullManager">
+    <option name="myDefaultNullable" value="androidx.annotation.Nullable" />
+    <option name="myDefaultNotNull" value="androidx.annotation.NonNull" />
+    <option name="myNullables">
+      <value>
+        <list size="14">
+          <item index="0" class="java.lang.String" itemvalue="org.jetbrains.annotations.Nullable" />
+          <item index="1" class="java.lang.String" itemvalue="edu.umd.cs.findbugs.annotations.Nullable" />
+          <item index="2" class="java.lang.String" itemvalue="android.support.annotation.Nullable" />
+          <item index="3" class="java.lang.String" itemvalue="androidx.annotation.Nullable" />
+          <item index="4" class="java.lang.String" itemvalue="androidx.annotation.RecentlyNullable" />
+          <item index="5" class="java.lang.String" itemvalue="com.android.annotations.Nullable" />
+          <item index="6" class="java.lang.String" itemvalue="javax.annotation.Nullable" />
+          <item index="7" class="java.lang.String" itemvalue="javax.annotation.CheckForNull" />
+          <item index="8" class="java.lang.String" itemvalue="org.checkerframework.checker.nullness.qual.Nullable" />
+          <item index="9" class="java.lang.String" itemvalue="org.checkerframework.checker.nullness.compatqual.NullableDecl" />
+          <item index="10" class="java.lang.String" itemvalue="org.checkerframework.checker.nullness.compatqual.NullableType" />
+          <item index="11" class="java.lang.String" itemvalue="org.eclipse.jdt.annotation.Nullable" />
+          <item index="12" class="java.lang.String" itemvalue="io.reactivex.annotations.Nullable" />
+          <item index="13" class="java.lang.String" itemvalue="io.reactivex.rxjava3.annotations.Nullable" />
+        </list>
+      </value>
+    </option>
+    <option name="myNotNulls">
+      <value>
+        <list size="13">
+          <item index="0" class="java.lang.String" itemvalue="org.jetbrains.annotations.NotNull" />
+          <item index="1" class="java.lang.String" itemvalue="edu.umd.cs.findbugs.annotations.NonNull" />
+          <item index="2" class="java.lang.String" itemvalue="android.support.annotation.NonNull" />
+          <item index="3" class="java.lang.String" itemvalue="androidx.annotation.NonNull" />
+          <item index="4" class="java.lang.String" itemvalue="androidx.annotation.RecentlyNonNull" />
+          <item index="5" class="java.lang.String" itemvalue="com.android.annotations.NonNull" />
+          <item index="6" class="java.lang.String" itemvalue="javax.annotation.Nonnull" />
+          <item index="7" class="java.lang.String" itemvalue="org.checkerframework.checker.nullness.qual.NonNull" />
+          <item index="8" class="java.lang.String" itemvalue="org.checkerframework.checker.nullness.compatqual.NonNullDecl" />
+          <item index="9" class="java.lang.String" itemvalue="org.checkerframework.checker.nullness.compatqual.NonNullType" />
+          <item index="10" class="java.lang.String" itemvalue="org.eclipse.jdt.annotation.NonNull" />
+          <item index="11" class="java.lang.String" itemvalue="io.reactivex.annotations.NonNull" />
+          <item index="12" class="java.lang.String" itemvalue="io.reactivex.rxjava3.annotations.NonNull" />
+        </list>
+      </value>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>

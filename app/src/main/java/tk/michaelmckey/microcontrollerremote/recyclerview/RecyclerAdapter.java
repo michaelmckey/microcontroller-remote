@@ -47,7 +47,7 @@ import tk.michaelmckey.microcontrollerremote.databinding.RecyclerViewItemBinding
  * Also manages sorting and filtering of data set.
  * @param <E> the type of the object to display in the RecyclerView
  * @author Michael McKey
- * @version 1.0.0
+ * @version 1.2.2
  */
 class RecyclerAdapter<E extends RecyclerElement>
         extends RecyclerView.Adapter<RecyclerViewHolder<E>> {
@@ -67,6 +67,7 @@ class RecyclerAdapter<E extends RecyclerElement>
     @NonNull
     private Order mOrder = Order.ASCENDING;//Overwritten after created
 
+    @SuppressWarnings("CanBeFinal")
     @NonNull
     private List<E> mData = new ArrayList<>();
     @NonNull

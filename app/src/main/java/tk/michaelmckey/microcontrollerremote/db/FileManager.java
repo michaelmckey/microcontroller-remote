@@ -40,7 +40,7 @@ import androidx.annotation.NonNull;
 /**
  * Manages accessing files
  * @author Michael Mckey
- * @version 1.0.0
+ * @version 1.2.2
  */
 class FileManager {
     @NonNull
@@ -50,7 +50,7 @@ class FileManager {
     /**
      * Retrieves the JSON data from a specified file
      * @param context Context for accessing the file
-     * @param fileName the name of the file to read from
+     * @param fileName the author_name_text_view of the file to read from
      * @return the JSON string the file contains
      * @throws IOException exceptions thrown when accessing the file
      */
@@ -74,7 +74,7 @@ class FileManager {
     /**
      * Writes a JSON string to a specified fileF
      * @param context Context for accessing the file
-     * @param fileName the name of the file to write to
+     * @param fileName the author_name_text_view of the file to write to
      * @param jsonString the JSON string to write to the file
      */
     public static void writeFile(@NonNull Context context,
@@ -92,9 +92,9 @@ class FileManager {
     }
 
     /**
-     * Checks if a file exists with the given name
+     * Checks if a file exists with the given author_name_text_view
      * @param context Context for getting the path of the directory holding application files.
-     * @param fileName the name of the file to check
+     * @param fileName the author_name_text_view of the file to check
      * @return true if the file exists
      */
     public static boolean isFilePresent(@NonNull Context context, @NonNull String fileName) {

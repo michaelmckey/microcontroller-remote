@@ -41,7 +41,7 @@ import tk.michaelmckey.microcontrollerremote.recyclerview.RecyclerFragment;
 /**
  * Manages all user interactions within the Commands screen.
  * @author Michael McKey
- * @version 1.0.0
+ * @version 1.2.2
  */
 public class CommandsFragment extends RecyclerFragment<CodeEntity> {
     private boolean mCalledForResult;
@@ -80,7 +80,8 @@ public class CommandsFragment extends RecyclerFragment<CodeEntity> {
 
             //makes sure that the nav controller hasn't already navigated away from the fragment
             // (due to another click at the same time - e.g. double clicking the view)
-            if (Objects.requireNonNull(navController.getCurrentDestination()).getId() == R.id.nav_commands) {
+            if (Objects.requireNonNull(navController.getCurrentDestination()).getId()
+                    == R.id.nav_commands) {
                 CommandsFragmentDirections.ActionNavCommandsToNavCurrentRemote action =
                         CommandsFragmentDirections.actionNavCommandsToNavCurrentRemote();
                 action.setCodeId(code.getId());

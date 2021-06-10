@@ -25,6 +25,7 @@
 package tk.michaelmckey.microcontrollerremote.ui.main;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.widget.SearchView;
@@ -48,7 +49,7 @@ import tk.michaelmckey.microcontrollerremote.databinding.ActivityMainBinding;
 /**
  * Manages navigation and the toolbar
  * @author Michael McKey
- * @version 1.0.0
+ * @version 1.2.2
  */
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -71,7 +72,6 @@ public class MainActivity extends AppCompatActivity
         setContentView(binding.getRoot());
 
         mMainActivityViewModel = new ViewModelProvider(this).get(MainActivityViewModel.class);
-
         mDrawer = binding.drawerLayout;
         mNavController = Navigation.findNavController(this, R.id.nav_host_fragment);
 
@@ -101,6 +101,9 @@ public class MainActivity extends AppCompatActivity
         if(item.getItemId() == R.id.nav_licences){
             //displays the licences in the application
             startActivity(new Intent(this, OssLicensesMenuActivity.class));
+        }else if(item.getItemId() == R.id.nav_tutorial){
+            //redirects the user to the instructions
+            startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(getString(R.string.tutorial_link))));
         }
         assert mNavController != null;
         return NavigationUI.onNavDestinationSelected(item, mNavController)

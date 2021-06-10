@@ -57,7 +57,7 @@ import tk.michaelmckey.microcontrollerremote.ui.main.MainActivityViewModel;
  * Manages elements in UI to control the RecyclerView. Handles dialog pop ups and the action bar
  * @param <E> the type of object to display in the RecyclerView
  * @author Michael McKey
- * @version 1.0.0
+ * @version 1.2.2
  */
 public abstract class RecyclerFragment<E extends RecyclerElement>
         extends Fragment implements RecyclerSelectionListener<E> {
@@ -81,6 +81,7 @@ public abstract class RecyclerFragment<E extends RecyclerElement>
             inflater.inflate(R.menu.menu_recycler_view, menu);
 
             SearchView searchView = (SearchView) menu.findItem(R.id.app_bar_search).getActionView();
+            searchView.setQueryHint(getString(R.string.searchview_hint));
             searchView.clearFocus();
             return true;
         }
@@ -259,7 +260,7 @@ public abstract class RecyclerFragment<E extends RecyclerElement>
     /**
      * Checks if the fragment has been called with a request
      * (e.g. redirected from another fragment to allow the user to select an item).
-     * Then sets up the RecyclerView and the FloatingActionButton.
+     * Then sets up the RecyclerView
      * @param rootView the rootView of the fragment
      * @param savedInstanceState information to reconstruct the fragment(if being reconstructed)
      */
@@ -292,8 +293,18 @@ public abstract class RecyclerFragment<E extends RecyclerElement>
             mRecyclerViewModel.getSortBy().observe(getViewLifecycleOwner(), mAdapter::setSortBy);
             mRecyclerViewModel.getOrder().observe(getViewLifecycleOwner(), mAdapter::setOrder);
         }
+    }
 
-        //creates the FAB
+    /**
+     * Sets up the FloatingActionButton(FAB).
+     * Can't do it in onViewCreated as the MainActivity Layout isn't initialised then.
+     */
+    @Override
+    public void onStart() {
+        super.onStart();
+
+        //Sets up the FAB
+        //
         View fab = requireActivity().findViewById(R.id.fab);
         fab.setVisibility(View.VISIBLE);
         fab.setOnClickListener(v -> editElement(null));

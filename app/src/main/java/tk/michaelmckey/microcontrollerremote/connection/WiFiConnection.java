@@ -36,7 +36,7 @@ import androidx.annotation.NonNull;
 /**
  * Creates and manages WiFi connections
  * @author Michael McKey
- * @version 1.0.0
+ * @version 1.2.2
  */
 public class WiFiConnection extends Connection{
     @NonNull

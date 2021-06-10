@@ -31,28 +31,30 @@
 
     <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:hint="@string/title"
+        android:labelFor="@+id/title_input">
 
         <AutoCompleteTextView
             android:id="@+id/title_input"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="@string/title"
+            android:layout_height="@dimen/code_editor_item_height"
             android:imeOptions="actionDone"
-            android:inputType="text" />
+            android:inputType="text"/>
 
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:hint="@string/message"
+        android:labelFor="@+id/message_input" >
 
         <AutoCompleteTextView
             android:id="@+id/message_input"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="@string/message"
+            android:layout_height="@dimen/code_editor_item_height"
             android:imeOptions="actionDone"
-            android:inputType="text" />
+            android:inputType="text"/>
     </com.google.android.material.textfield.TextInputLayout>
 </LinearLayout>

@@ -25,7 +25,7 @@
 
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    app:startDestination="@id/nav_remotes">
+    app:startDestination="@+id/nav_remotes">
 
     <fragment
         android:id="@+id/nav_current_remote"
@@ -33,7 +33,7 @@
         android:label="@string/menu_current_remote">
         <action
             android:id="@+id/action_nav_current_remote_to_nav_commands"
-            app:destination="@id/nav_commands"
+            app:destination="@+id/nav_commands"
             app:enterAnim="@android:anim/slide_in_left">
             <argument
                 android:name="button_resource_name"
@@ -41,8 +41,8 @@
         </action>
         <action
             android:id="@+id/action_nav_current_remote_to_nav_remotes"
-            app:destination="@id/nav_remotes"
-            app:popUpTo="@id/nav_current_remote"
+            app:destination="@+id/nav_remotes"
+            app:popUpTo="@+id/nav_current_remote"
             app:popUpToInclusive="true" />
         <argument
             android:name="remoteId"
@@ -60,7 +60,7 @@
         android:label="@string/menu_remotes">
         <action
             android:id="@+id/action_nav_remotes_to_nav_current_remote"
-            app:destination="@id/nav_current_remote"
+            app:destination="@+id/nav_current_remote"
             app:popUpToInclusive="false" />
     </fragment>
 
@@ -70,9 +70,9 @@
         android:label="@string/menu_commands">
         <action
             android:id="@+id/action_nav_commands_to_nav_current_remote"
-            app:destination="@id/nav_current_remote"
+            app:destination="@+id/nav_current_remote"
             app:enterAnim="@android:anim/slide_in_left"
-            app:popUpTo="@id/nav_current_remote"
+            app:popUpTo="@+id/nav_current_remote"
             app:popUpToInclusive="true" />
         <argument
             android:name="calledForResult"

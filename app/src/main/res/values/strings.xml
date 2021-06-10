@@ -28,10 +28,7 @@
     <string name="nav_header_subtitle" translatable="false">michaelmckey123@protonmail.com</string>
     <string name="nav_header_desc">Navigation header</string>
 
-    <string name="button_lang_text">lang</string>
     <string name="button_fav_text">fav</string>
-    <string name="button_green_text">green</string>
-    <string name="button_tv_radio_text">tv/radio</string>
     <string name="button_info_text">INFO</string>
     <string name="button_8_text">8</string>
     <string name="button_rewind_text">rewind</string>
@@ -45,14 +42,12 @@
     <string name="button_4_text">4</string>
     <string name="button_list_text">list</string>
     <string name="button_pvr_text">PVR</string>
-    <string name="button_red_text">red</string>
     <string name="button_1_text">1</string>
     <string name="button_mute_text">mute</string>
     <string name="button_0_text">0</string>
     <string name="button_recall_text">recall</string>
     <string name="button_6_text">6</string>
     <string name="button_ttx_text">TTX</string>
-    <string name="button_timeshift_text">timeshift</string>
     <string name="button_up_text">up</string>
     <string name="button_timer_text">timer</string>
     <string name="button_right_text">right</string>
@@ -66,8 +61,6 @@
     <string name="button_skip_text">skip</string>
     <string name="button_next_text">next</string>
     <string name="button_previous_text">previous</string>
-    <string name="button_yellow_text">yellow</string>
-    <string name="button_blue_text">blue</string>
     <string name="button_2_text">2</string>
     <string name="button_5_text">5</string>
     <string name="button_subtitle_text">subtitle</string>
@@ -83,8 +76,9 @@
     <string name="menu_commands">Commands</string>
     <string name="menu_quick_actions">Others</string>
     <string name="menu_licences">Licences</string>
+    <string name="menu_tutorial">Tutorial</string>
 
-    <string name="FAB_content_description">A floating Action button</string>
+    <string name="FAB_content_description">new</string>
 
     <string name="message">Message</string>
     <string name="date">Date</string>
@@ -107,10 +101,13 @@
     <string name="deleted">DELETED</string>
     <string name="layout_type_hint">Layout type</string>
     <string name="button_volume_up_text">volume up</string>
+    <string name="button_volume_down_text">volume down</string>
+
+    <string name="button_brightness_up_text">brightness up</string>
+    <string name="button_brightness_down_text">brightness down</string>
     <string name="button_back_text">back</string>
     <string name="button_home_text">home</string>
     <string name="button_fast_forward_text">fast forward</string>
-    <string name="button_volume_down_text">volume down</string>
 
     <string name="connection_mode_hint">Connection mode</string>
     <string name="connection_info_hint">Connection info</string>
@@ -128,7 +125,7 @@
     <string name="url">URL</string>
     <string name="mac_address">MAC address</string>
     <string name="select_items">SELECT ITEMS</string>
-    <string name="received_message_key">received_message</string>
+    <string name="received_message_key">command</string>
     <string name="date_format">d MMM   HH:mma</string>
     <string name="button_info">Button info</string>
     <string name="copy_suffix">" copy"</string>
@@ -149,4 +146,8 @@
     <string name="button_calibrate_text">Calibrate</string>
     <string name="button_english_text">English</string>
     <string name="connecting">Connecting…</string>
+    <string name="received_command_prefix">Received command:</string>
+    <string name="searchview_hint">Search</string>
+    <string name="capital_off">OFF</string>
+    <string name="tutorial_link">http://bit.ly/irTutorial</string>
 </resources>

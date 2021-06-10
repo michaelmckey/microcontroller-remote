@@ -42,7 +42,7 @@ import tk.michaelmckey.microcontrollerremote.db.entity.CodeEntity;
 /**
  * Creates a Alert Dialog for modifying or creating a {@link CodeEntity}
  * @author Michael McKey
- * @version 1.0.0
+ * @version 1.2.2
  */
 public class CodeEditorDialog extends DialogFragment {
     @NonNull

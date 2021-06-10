@@ -24,27 +24,27 @@
 
 <resources>
     <!-- Default screen margins, per the Android Design guidelines. -->
-    <dimen name="activity_horizontal_margin">16dp</dimen>
-    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="side_padding_nav_header">16dp</dimen>
+    <dimen name="top_padding_nav_header">20dp</dimen>
     <dimen name="nav_header_vertical_spacing">8dp</dimen>
-    <dimen name="nav_header_height">176dp</dimen>
     <dimen name="fab_margin">16dp</dimen>
     <dimen name="text_margin">16dp</dimen>
     <dimen name="content_padding_normal">16dp</dimen>
 
     <dimen name="keypad_font_size">12sp</dimen>
-    <dimen name="current_remote_editor_text_size">16sp</dimen>
+    <dimen name="current_remote_editor_text_size">18sp</dimen>
 
     <dimen name="small_layout_button_size">60dp</dimen>
     <dimen name="medium_layout_button_size">60dp</dimen>
     <dimen name="toy_layout_button_size">80dp</dimen>
+    <dimen name="light_layout_button_size">80dp</dimen>
 
     <dimen name="large_layout_button_width">90dp</dimen>
-    <dimen name="large_layout_button_height">40dp</dimen>
+    <dimen name="large_layout_button_height">48dp</dimen>
 
     <dimen name="small_layout_text_size">24sp</dimen>
     <dimen name="medium_layout_text_size">24sp</dimen>
-    <dimen name="toy_layout_text_size">24sp</dimen>
+    <dimen name="toy_layout_text_size">20sp</dimen>
 
 
     <dimen name="small_layout_margin">16sp</dimen>
@@ -52,4 +52,14 @@
 
     <dimen name="remotes_editor_margin">4sp</dimen>
     <dimen name="current_remote_editor_margin">10sp</dimen>
+    <dimen name="radio_button_height">48dp</dimen>
+    <dimen name="button_editor_item_height">48dp</dimen>
+    <dimen name="remote_editor_item_height">48dp</dimen>
+    <dimen name="code_editor_item_height">48dp</dimen>
+    <dimen name="nav_header_item_height">48dp</dimen>
+
+    <dimen name="author_name_text_size">20sp</dimen>
+    <dimen name="author_email_text_size">14sp</dimen>
+    <dimen name="sort_by_radio_button_text_size">18sp</dimen>
+    <dimen name="sort_by_label_text_size">24sp</dimen>
 </resources>

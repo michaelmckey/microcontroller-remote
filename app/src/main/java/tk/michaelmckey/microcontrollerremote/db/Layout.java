@@ -27,7 +27,7 @@ package tk.michaelmckey.microcontrollerremote.db;
 /**
  * All of the available remote layouts
  * @author Michael McKey
- * @version 1.0.0
+ * @version 1.2.2
  */
 public enum Layout {
     /**
@@ -44,9 +44,14 @@ public enum Layout {
      * Corresponds to the xml layout layout_large.xml
      */
     LARGE,
+
     /**
      * Corresponds to the xml layout layout_toy.xml
      */
     TOY,
 
+    /**
+     * Corresponds to the xml layout layout_lights.xml
+     */
+    LIGHTS,
 }

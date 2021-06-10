@@ -34,7 +34,7 @@ import tk.michaelmckey.microcontrollerremote.recyclerview.RecyclerElement;
 /**
  * Stores the title, message and the time received for a given CodeEntity
  * @author Michael McKey
- * @version 1.0.0
+ * @version 1.2.2
  */
 @Entity(tableName = "code_table")
 public class CodeEntity implements RecyclerElement {

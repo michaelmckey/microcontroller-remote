@@ -39,7 +39,7 @@ import tk.michaelmckey.microcontrollerremote.databinding.RecyclerViewItemBinding
  * Also Handles click events.
  * @param <E> the type of the data to display implements RecyclerElement
  * @author Michael McKey
- * @version 1.0.0
+ * @version 1.2.2
  */
 class RecyclerViewHolder<E extends RecyclerElement>
         extends RecyclerView.ViewHolder implements View.OnClickListener, View.OnLongClickListener{

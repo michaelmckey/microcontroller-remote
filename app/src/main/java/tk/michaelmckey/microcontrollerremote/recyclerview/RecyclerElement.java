@@ -30,7 +30,7 @@ import androidx.annotation.NonNull;
  * Defines a generic RecyclerView element.
  * Implemented by SQL databases objects which are displayed in RecyclerViews
  * @author Michael McKey
- * @version 1.0.0
+ * @version 1.2.2
  */
 public interface RecyclerElement {
     /**

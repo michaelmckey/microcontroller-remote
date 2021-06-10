@@ -39,7 +39,7 @@ import tk.michaelmckey.microcontrollerremote.db.entity.CodeEntity;
 /**
  * Defines queries for accessing the CodeEntity table
  * @author Michael McKey
- * @version 1.0.0
+ * @version 1.2.2
  */
 @Dao
 public interface CodeDao {

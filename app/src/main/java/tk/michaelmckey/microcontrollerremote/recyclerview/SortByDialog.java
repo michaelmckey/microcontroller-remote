@@ -43,7 +43,7 @@ import tk.michaelmckey.microcontrollerremote.databinding.DialogSortByBinding;
  * @see SortBy
  * @see Order
  * @author Michael McKey
- * @version 1.0.0
+ * @version 1.2.2
  */
 public class SortByDialog extends DialogFragment {
     @NonNull

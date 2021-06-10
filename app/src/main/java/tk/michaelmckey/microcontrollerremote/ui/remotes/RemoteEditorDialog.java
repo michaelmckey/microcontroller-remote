@@ -53,7 +53,7 @@ import tk.michaelmckey.microcontrollerremote.db.entity.RemoteEntity;
 /**
  * Creates a Alert Dialog for modifying or creating a {@link RemoteEntity}
  * @author Michael McKey
- * @version 1.0.0
+ * @version 1.2.2
  */
 public class RemoteEditorDialog extends DialogFragment {
     @NonNull
@@ -192,10 +192,14 @@ public class RemoteEditorDialog extends DialogFragment {
                                         EditorInfo.TYPE_CLASS_TEXT);
                                 binding.connectionInfoButton.setVisibility(View.VISIBLE);
                                 binding.connectionInfoButton.setOnClickListener(v -> {
-                                            BluetoothDeviceDialog bluetoothDeviceDialog = new BluetoothDeviceDialog();
-                                            bluetoothDeviceDialog.getMacAddress().observe(bluetoothDeviceDialog,
+                                            BluetoothDeviceDialog bluetoothDeviceDialog =
+                                                    new BluetoothDeviceDialog();
+                                            bluetoothDeviceDialog.getMacAddress()
+                                                    .observe(bluetoothDeviceDialog,
                                                     binding.connectionInfoInput::setText);
-                                            bluetoothDeviceDialog.show(getChildFragmentManager(), BluetoothDeviceDialog.TAG);
+                                            bluetoothDeviceDialog.show(
+                                                    getChildFragmentManager(),
+                                                    BluetoothDeviceDialog.TAG);
                                         });
                                 break;
                         }

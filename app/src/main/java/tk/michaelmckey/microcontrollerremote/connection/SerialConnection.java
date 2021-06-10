@@ -47,7 +47,7 @@ import tk.michaelmckey.microcontrollerremote.R;
 /**
  * Creates and manages Serial connections
  * @author Michael McKey
- * @version 1.0.0
+ * @version 1.2.2
  */
 public class SerialConnection extends Connection implements SerialInputOutputManager.Listener {
     private static final int WRITE_WAIT_MILLIS = 2000;

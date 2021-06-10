@@ -40,14 +40,13 @@ import tk.michaelmckey.microcontrollerremote.db.entity.RemoteEntity;
  * Acts as a global ViewModel which manages UI data.
  * Manages layouts and provides access to the {@link DataRepository}.
  * @author Michael McKey
- * @version 1.0.0
+ * @version 1.2.2
  */
 public class MainActivityViewModel extends AndroidViewModel {
     @NonNull
     private final DataRepository mDataRepository;
 
     /**
-     * Retrieves all of the data
      * and creates instance of {@link DataRepository}
      */
     public MainActivityViewModel(@NonNull Application application) {

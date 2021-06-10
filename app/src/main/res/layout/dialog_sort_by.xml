@@ -34,7 +34,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/sort_by"
-        android:textSize="20sp"
+        android:textSize="@dimen/sort_by_label_text_size"
         android:textStyle="bold" />
 
     <View
@@ -45,33 +45,36 @@
     <RadioGroup
         android:id="@+id/sort_by_radio_group"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:checkedButton="@id/title_radio_button">
+        android:layout_height="wrap_content"
+        android:checkedButton="@+id/title_radio_button">
 
         <RadioButton
             android:id="@+id/title_radio_button"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/title" />
+            android:layout_height="@dimen/radio_button_height"
+            android:text="@string/title"
+            android:textSize="@dimen/sort_by_radio_button_text_size" />
 
         <RadioButton
             android:id="@+id/contents_radio_button"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/contents" />
+            android:layout_height="@dimen/radio_button_height"
+            android:text="@string/contents"
+            android:textSize="@dimen/sort_by_radio_button_text_size" />
 
         <RadioButton
             android:id="@+id/time_radio_button"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/time" />
+            android:layout_height="@dimen/radio_button_height"
+            android:text="@string/time"
+            android:textSize="@dimen/sort_by_radio_button_text_size" />
     </RadioGroup>
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/order_textView_text"
-        android:textSize="20sp"
+        android:textSize="@dimen/sort_by_label_text_size"
         android:textStyle="bold" />
 
     <View
@@ -83,19 +86,21 @@
         android:id="@+id/order_radio_group"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:checkedButton="@id/ascending_radio_button">
+        android:checkedButton="@+id/ascending_radio_button">
 
         <RadioButton
             android:id="@+id/ascending_radio_button"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/ascending_radio_button_text" />
+            android:layout_height="@dimen/radio_button_height"
+            android:text="@string/ascending_radio_button_text"
+            android:textSize="@dimen/sort_by_radio_button_text_size" />
 
         <RadioButton
             android:id="@+id/descending_radio_button"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/descending_radio_button_text" />
+            android:layout_height="@dimen/radio_button_height"
+            android:text="@string/descending_radio_button_text"
+            android:textSize="@dimen/sort_by_radio_button_text_size" />
 
     </RadioGroup>
 </LinearLayout>

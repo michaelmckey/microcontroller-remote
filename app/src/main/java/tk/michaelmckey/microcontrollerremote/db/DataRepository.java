@@ -35,7 +35,6 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.concurrent.Callable;
 import java.util.concurrent.ExecutionException;
-import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
 
 import androidx.annotation.NonNull;
@@ -51,7 +50,7 @@ import tk.michaelmckey.microcontrollerremote.db.entity.RemoteEntity;
  * This is where all of the global data is stored. <br>
  * It manages retrieving and saving data(to both SQL and JSON)
  * @author Michael McKey
- * @version 1.0.0
+ * @version 1.2.2
  */
 public class DataRepository {
     @NonNull
@@ -155,38 +154,17 @@ public class DataRepository {
                 "00:11:22:33:44:55",
                 time);
         insert(remote, toyLayout);
-    }
 
-    /**
-     * Creates a remote layout with the given remote
-     * @param uninitialisedRemote the remote to insert into the database
-     * @param layout the Map layout which dictates which code is assigned to which button
-     */
-    public void insert(@NonNull RemoteEntity uninitialisedRemote,
-                       @NonNull HashMap<String, Long> layout){
-        insert(uninitialisedRemote);
-        try {
-            // need to retrieve the Remote as the Remote created doesn't have an Id
-            List<RemoteEntity> remotesWithTime = getRemotesWithTime(uninitialisedRemote.getTime());
-            boolean remoteFound = false;
-            for (RemoteEntity remote: remotesWithTime) {
-                if(uninitialisedRemote.equals(remote)){
-                    mRemoteLayoutManager.createLayout(remote.getId(), layout);
-                    save();
-                    Log.e("create new remote", "created remote" + remote);
-                    remoteFound = true;
-                    break;
-                }
-            }
-            if(!remoteFound){
-                Log.e("DataRepository", "The remote just entered into the database cannot be found");
-            }
-        } catch (@NonNull ExecutionException | InterruptedException e) {
-            e.printStackTrace();
-            Log.e("DataRepository",
-                    "Error when calling getRemotesWithTime. Time = "
-                            + uninitialisedRemote.getTime());
-        }
+        //creates the lights example
+        HashMap<String, Long> lightsLayout = createLayoutFromMessages(
+                ExampleLayoutGenerator.generateLightsExample());
+        time = Calendar.getInstance().getTime().getTime();
+        remote = new RemoteEntity("Lights Example(change MAC address)",
+                "LIGHTS",
+                "BLUETOOTH",
+                "00:11:22:33:44:55",
+                time);
+        insert(remote, lightsLayout);
     }
 
     /**
@@ -215,7 +193,7 @@ public class DataRepository {
     @NonNull
     public CodeEntity getCode(long id) throws ExecutionException, InterruptedException {
         Callable<CodeEntity> callable = () -> mCodeDao.getCode(id);
-        Future<CodeEntity> future = Executors.newSingleThreadExecutor().submit(callable);
+        Future<CodeEntity> future = AppDatabase.databaseWriteExecutor.submit(callable);
         return future.get();
     }
 
@@ -230,7 +208,7 @@ public class DataRepository {
     public List<CodeEntity> getCodesWithMessage(@NonNull String message)
             throws ExecutionException, InterruptedException {
         Callable<List<CodeEntity>> callable = () -> mCodeDao.getEntriesWithMessage(message);
-        Future<List<CodeEntity>> future = Executors.newSingleThreadExecutor().submit(callable);
+        Future<List<CodeEntity>> future = AppDatabase.databaseWriteExecutor.submit(callable);
         return future.get();
     }
 
@@ -245,7 +223,7 @@ public class DataRepository {
     private List<RemoteEntity> getRemotesWithTime(long time)
             throws ExecutionException, InterruptedException {
         Callable<List<RemoteEntity>> callable = () -> mRemoteDao.getRemotesWithTime(time);
-        Future<List<RemoteEntity>> future = Executors.newSingleThreadExecutor().submit(callable);
+        Future<List<RemoteEntity>> future = AppDatabase.databaseWriteExecutor.submit(callable);
         return future.get();
     }
 
@@ -259,7 +237,7 @@ public class DataRepository {
     @NonNull
     public RemoteEntity getRemote(long id) throws ExecutionException, InterruptedException {
         Callable<RemoteEntity> callable = () -> mRemoteDao.getRemote(id);
-        Future<RemoteEntity> future = Executors.newSingleThreadExecutor().submit(callable);
+        Future<RemoteEntity> future = AppDatabase.databaseWriteExecutor.submit(callable);
         return future.get();
     }
 
@@ -271,6 +249,47 @@ public class DataRepository {
      */
     public void insert(@NonNull CodeEntity code) {
         AppDatabase.databaseWriteExecutor.execute(() -> mCodeDao.insert(code));
+    }
+
+    /**
+     * Inserts the Code into the database(and retrieves it) on a non-UI thread.
+     * This prevents any long running operations on the main thread,
+     * as this would block the UI(and trigger exceptions)
+     * @param uninitialisedCode the Code to insert
+     * @return the matching Code after it has been retrieved from the database
+     */
+    @Nullable
+    public CodeEntity insertAndRetrieve(@NonNull CodeEntity uninitialisedCode){
+        Callable<CodeEntity> callable = () -> {
+            mCodeDao.insert(uninitialisedCode);
+            try {
+                // need to retrieve the code as the uninitialisedCode never has an Id
+                List<CodeEntity> codesWithMessage =
+                        getCodesWithMessage(uninitialisedCode.getMessage());
+                for (CodeEntity code: codesWithMessage) {
+                    if(uninitialisedCode.equals(code)){
+                        return code;
+                    }
+                }
+                //code wasn't found and returned
+                Log.e("DataRepository",
+                        "The Code just entered into the database cannot be found");
+
+            } catch (@NonNull ExecutionException | InterruptedException e) {
+                e.printStackTrace();
+                Log.e("DataRepository",
+                        "Error when calling getCodesWithMessage. Message = "
+                                + uninitialisedCode.getMessage());
+            }
+            return null;
+        };
+        Future<CodeEntity> future = AppDatabase.databaseWriteExecutor.submit(callable);
+        try {
+            return future.get();
+        } catch (ExecutionException | InterruptedException e) {
+            e.printStackTrace();
+            return null;
+        }
     }
 
     /**
@@ -303,13 +322,60 @@ public class DataRepository {
     }
 
     /**
-     * Inserts the Remote into the database on a non-UI thread.
+     * Inserts the Remote into the database(and retrieves it) on a non-UI thread.
      * This prevents any long running operations on the main thread,
      * as this would block the UI(and trigger exceptions)
-     * @param remote the Remote to insert
+     * @param uninitialisedRemote the Remote to insert
+     * @return the matching Remote after it has been retrieved from the database
      */
-    private void insert(@NonNull RemoteEntity remote) {
-        AppDatabase.databaseWriteExecutor.execute(() -> mRemoteDao.insert(remote));
+    @Nullable
+    public RemoteEntity insertAndRetrieve(@NonNull RemoteEntity uninitialisedRemote){
+        Callable<RemoteEntity> callable = () -> {
+            mRemoteDao.insert(uninitialisedRemote);
+            try {
+                // need to retrieve the remote as the uninitialised_remote never has an Id
+                List<RemoteEntity> remotesWithTime = getRemotesWithTime(uninitialisedRemote.getTime());
+                for (RemoteEntity remote: remotesWithTime) {
+                    if(uninitialisedRemote.equals(remote)){
+                        return remote;
+                    }
+                }
+                //remote wasn't found and returned
+                Log.e("DataRepository",
+                        "The Remote just entered into the database cannot be found");
+
+            } catch (@NonNull ExecutionException | InterruptedException e) {
+                e.printStackTrace();
+                Log.e("DataRepository",
+                        "Error when calling getRemotesWithTime. Time = "
+                                + uninitialisedRemote.getTime());
+            }
+            return null;
+        };
+        Future<RemoteEntity> future = AppDatabase.databaseWriteExecutor.submit(callable);
+        try {
+            return future.get();
+        } catch (ExecutionException | InterruptedException e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
+
+    /**
+     * Creates a remote layout with the given remote
+     * @param uninitialisedRemote the remote to insert into the database
+     * @param layout the Map layout which dictates which code is assigned to which button
+     */
+    public void insert(@NonNull RemoteEntity uninitialisedRemote,
+                       @NonNull HashMap<String, Long> layout){
+        RemoteEntity retrievedRemote = insertAndRetrieve(uninitialisedRemote);
+        if(retrievedRemote != null) {
+            mRemoteLayoutManager.createLayout(retrievedRemote.getId(), layout);
+            save();
+            Log.e("create new remote", "created remote" + retrievedRemote);
+        }else{
+            Log.e("DataRepository", "inserted remote wasn't returned");
+        }
     }
 
     /**
@@ -385,36 +451,18 @@ public class DataRepository {
             // (the data stored in json is then permanently remembered with incorrect ids)
             int buttonId = entry.getKey();
             String message = entry.getValue();
-            String shortName = mResources.getResourceEntryName(buttonId);
+            //String shortName = mResources.getResourceEntryName(buttonId);
             String longName = mResources.getResourceName(buttonId);
 
             String title = message + "*";
             //creates and adds the code
             long time = Calendar.getInstance().getTime().getTime();
-            CodeEntity uninitialised_code = new CodeEntity(title, message, time);
-
-            insert(uninitialised_code);
-            try {
-                // need to retrieve the code as the uninitialised_code never has an Id
-                List<CodeEntity> codesWithMessage =
-                        getCodesWithMessage(uninitialised_code.getMessage());
-                boolean codeFound = false;
-                for (CodeEntity code: codesWithMessage) {
-                    if(uninitialised_code.equals(code)){
-                        //associates the code with its UI button
-                        exampleLayout.put(longName, code.getId());
-                        codeFound = true;
-                        break;//breaks as 1 matching Code is sufficient
-                    }
-                }
-                if(!codeFound){
-                    Log.e("DataRepository", "The Code just entered into the database cannot be found");
-                }
-            } catch (@NonNull ExecutionException | InterruptedException e) {
-                e.printStackTrace();
-                Log.e("DataRepository",
-                        "Error when calling getCodesWithMessage. Message = "
-                        + uninitialised_code.getMessage());
+            CodeEntity uninitialisedCode = new CodeEntity(title, message, time);
+            CodeEntity retrievedCode = insertAndRetrieve(uninitialisedCode);
+            if(retrievedCode != null) {
+                exampleLayout.put(longName, retrievedCode.getId());
+            }else{
+                Log.e("DataRepository", "inserted code wasn't returned");
             }
         }
         return exampleLayout;

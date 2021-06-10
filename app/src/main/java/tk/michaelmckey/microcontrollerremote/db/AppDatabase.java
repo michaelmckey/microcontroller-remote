@@ -44,7 +44,7 @@ import tk.michaelmckey.microcontrollerremote.db.entity.RemoteEntity;
 /**
  * Creates an instance of the Room database
  * @author Michael Mckey
- * @version 1.0.0
+ * @version 1.2.2
  */
 @Database(entities = {CodeEntity.class, RemoteEntity.class}, version=1, exportSchema = false)
 public abstract class AppDatabase extends RoomDatabase {

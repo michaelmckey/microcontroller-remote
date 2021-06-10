@@ -48,7 +48,7 @@ import tk.michaelmckey.microcontrollerremote.databinding.BluetoothDeviceSelector
  * (from the list of paired Bluetooth devices)
  * Selected device returned by an observer on getMacAddress.
  * @author Michael McKey
- * @version 1.0.0
+ * @version 1.2.2
  */
 public class BluetoothDeviceDialog extends DialogFragment {
     @NonNull

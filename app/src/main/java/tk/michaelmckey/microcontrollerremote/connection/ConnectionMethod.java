@@ -27,7 +27,7 @@ package tk.michaelmckey.microcontrollerremote.connection;
 /**
  * Connection methods that can be used
  * @author Michael McKey
- * @version 1.0.0
+ * @version 1.2.2
  */
 public enum ConnectionMethod {
     /**

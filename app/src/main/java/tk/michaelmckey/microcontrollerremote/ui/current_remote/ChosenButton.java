@@ -27,7 +27,7 @@ package tk.michaelmckey.microcontrollerremote.ui.current_remote;
 /**
  * The Dialog button that has been chosen
  * @author Michael McKey
- * @version 1.0.0
+ * @version 1.2.2
  */
 public enum ChosenButton {
     /**

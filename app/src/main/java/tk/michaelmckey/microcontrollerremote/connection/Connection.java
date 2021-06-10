@@ -26,7 +26,6 @@ package tk.michaelmckey.microcontrollerremote.connection;
 
 import android.content.Context;
 import android.os.Handler;
-import android.util.Log;
 
 import java.util.Collection;
 import java.util.LinkedList;
@@ -38,7 +37,7 @@ import androidx.annotation.Nullable;
 /**
  * Defines a generic connection. Is the super class for all connection classes
  * @author Michael McKey
- * @version 1.0.0
+ * @version 1.2.2
  */
 public abstract class Connection {
     @NonNull

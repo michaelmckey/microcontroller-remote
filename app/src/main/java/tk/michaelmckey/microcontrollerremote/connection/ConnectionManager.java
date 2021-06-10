@@ -38,7 +38,7 @@ import androidx.annotation.Nullable;
 /**
  * Creates and manages all connections
  * @author Michael McKey
- * @version 1.0.0
+ * @version 1.2.2
  */
 public class ConnectionManager extends Connection implements ConnectionListener {
     @NonNull

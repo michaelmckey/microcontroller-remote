@@ -37,7 +37,7 @@ import tk.michaelmckey.microcontrollerremote.recyclerview.RecyclerElement;
  * Stores the title, layout type, connection method, connection info and the time of creation
  * for a given RemoteEntity
  * @author Michael McKey
- * @version 1.0.0
+ * @version 1.2.2
  */
 @Entity(tableName = "remote_table")
 public class RemoteEntity implements RecyclerElement{

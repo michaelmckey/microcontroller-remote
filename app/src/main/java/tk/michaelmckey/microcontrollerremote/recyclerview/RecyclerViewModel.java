@@ -36,7 +36,7 @@ import androidx.lifecycle.ViewModel;
 /**
  * Handles the storing and synchronising of the RecyclerView's settings across all of the fragments
  * @author Michael McKey
- * @version 1.0.0
+ * @version 1.2.2
  */
 public class RecyclerViewModel extends ViewModel {
     @NonNull

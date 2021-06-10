@@ -44,8 +44,10 @@
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|end"
         android:layout_margin="@dimen/fab_margin"
-        app:srcCompat="@android:drawable/ic_menu_add"
-        android:contentDescription="@string/FAB_content_description" />
+        android:contentDescription="@string/FAB_content_description"
+        app:fabSize="auto"
+        app:maxImageSize="40dp"
+        app:srcCompat="@drawable/fab_add_icon" />
 
     <include layout="@layout/content_main" />
 

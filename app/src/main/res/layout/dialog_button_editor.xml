@@ -35,7 +35,7 @@
 
         <TextView
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="@dimen/button_editor_item_height"
             android:layout_marginEnd="@dimen/current_remote_editor_margin"
             android:text="@string/title"
             android:textSize="@dimen/current_remote_editor_text_size"
@@ -44,7 +44,7 @@
         <TextView
             android:id="@+id/title_value"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="@dimen/button_editor_item_height"
             android:textSize="@dimen/current_remote_editor_text_size"
             android:textIsSelectable="true" />
     </TableRow>
@@ -55,7 +55,7 @@
 
         <TextView
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="@dimen/button_editor_item_height"
             android:layout_marginEnd="@dimen/current_remote_editor_margin"
             android:text="@string/message"
             android:textSize="@dimen/current_remote_editor_text_size"
@@ -64,7 +64,7 @@
         <TextView
             android:id="@+id/message_value"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="@dimen/button_editor_item_height"
             android:textSize="@dimen/current_remote_editor_text_size"
             android:textIsSelectable="true" />
     </TableRow>
@@ -75,7 +75,7 @@
 
         <TextView
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="@dimen/button_editor_item_height"
             android:layout_marginEnd="@dimen/current_remote_editor_margin"
             android:text="@string/date"
             android:textSize="@dimen/current_remote_editor_text_size"
@@ -84,7 +84,7 @@
         <TextView
             android:id="@+id/date_value"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="@dimen/button_editor_item_height"
             android:textSize="@dimen/current_remote_editor_text_size"
             android:textIsSelectable="true" />
 

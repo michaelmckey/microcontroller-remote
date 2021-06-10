@@ -43,11 +43,9 @@ import tk.michaelmckey.microcontrollerremote.ui.remotes.RemotesFragment;
 /**
  * Prepares and manages data for the {@link CurrentRemoteFragment}
  * @author Michael McKey
- * @version 1.0.0
+ * @version 1.2.2
  */
 public class CurrentRemoteViewModel extends AndroidViewModel {
-    //no need to use LiveData as for data to change the fragment has to be reloaded
-    //Using LiveData would weaken remove nullity checks
     @NonNull
     private final DataRepository mDataRepository;
     @Nullable
@@ -89,9 +87,9 @@ public class CurrentRemoteViewModel extends AndroidViewModel {
     }
 
     /**
-     * Gets the resource name of the button that is being assigned to a new code
+     * Gets the resource author_name_text_view of the button that is being assigned to a new code
      *
-     * @return the resource name (e.g. tk.michaelmckey.microcontrollerremote:id/button_ok)
+     * @return the resource author_name_text_view (e.g. tk.michaelmckey.microcontrollerremote:id/button_ok)
      */
     @Nullable
     public String getButtonResourceName() {
@@ -101,7 +99,7 @@ public class CurrentRemoteViewModel extends AndroidViewModel {
     /**
      * Sets which button is being assigned to a new code
      *
-     * @param resourceName the resource name of the button
+     * @param resourceName the resource author_name_text_view of the button
      *                     (e.g. tk.michaelmckey.microcontrollerremote:id/button_ok)
      */
     public void setButtonResourceName(@Nullable String resourceName) {
@@ -145,7 +143,7 @@ public class CurrentRemoteViewModel extends AndroidViewModel {
     /**
      * Sets the code associated with the Button
      *
-     * @param resourceName the resource name of the button
+     * @param resourceName the resource author_name_text_view of the button
      *                     (e.g. tk.michaelmckey.microcontrollerremote:id/button_ok)
      * @param code         the Code to associate with the Button
      *                     (if it is null it just removes the reference)

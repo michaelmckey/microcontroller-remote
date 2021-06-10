@@ -32,7 +32,7 @@ import tk.michaelmckey.microcontrollerremote.R;
 /**
  * Generates data for the example layouts
  * @author Michael Mckey
- * @version 1.0.0
+ * @version 1.2.2
  */
 class ExampleLayoutGenerator {
     /**
@@ -43,61 +43,52 @@ class ExampleLayoutGenerator {
     @NonNull
     public static HashMap<Integer, String> generateSerialExample(){
         HashMap<Integer, String> exampleIdToMessage = new HashMap<>();
-        exampleIdToMessage.put(R.id.button_power, "A05F58A7");
-        exampleIdToMessage.put(R.id.button_mute, "A05F708F");
+        exampleIdToMessage.put(R.id.button_power, "E51AFA05");
+        exampleIdToMessage.put(R.id.button_mute, "F10EFA05");
 
-        exampleIdToMessage.put(R.id.button_1, "0xA05FC837");
-        exampleIdToMessage.put(R.id.button_2, "0xA05F08F7");
-        exampleIdToMessage.put(R.id.button_3, "0xA05F8877");
-        exampleIdToMessage.put(R.id.button_fav, "A05F609F");
+        exampleIdToMessage.put(R.id.button_1, "EC13FA05");
+        exampleIdToMessage.put(R.id.button_2, "EF10FA05");
+        exampleIdToMessage.put(R.id.button_3, "EE11FA05");
+        exampleIdToMessage.put(R.id.button_fav, "F906FA05");
 
-        exampleIdToMessage.put(R.id.button_4, "0xA05FF00F");
-        exampleIdToMessage.put(R.id.button_5, "0xA05F30CF");
-        exampleIdToMessage.put(R.id.button_6, "0xA05FB04F");
-        exampleIdToMessage.put(R.id.button_subtitle, "A05F28D7");
+        exampleIdToMessage.put(R.id.button_4, "F00FFA05");
+        exampleIdToMessage.put(R.id.button_5, "F30CFA05");
+        exampleIdToMessage.put(R.id.button_6, "F20DFA05");
+        exampleIdToMessage.put(R.id.button_subtitle, "EB14FA05");
 
-        exampleIdToMessage.put(R.id.button_7, "0xA05FD02F");
-        exampleIdToMessage.put(R.id.button_8, "0xA05F10EF");
-        exampleIdToMessage.put(R.id.button_9, "0xA05F906F");
-        exampleIdToMessage.put(R.id.button_info, "A05F7887");
+        exampleIdToMessage.put(R.id.button_7, "F40BFA05");
+        exampleIdToMessage.put(R.id.button_8, "F708FA05");
+        exampleIdToMessage.put(R.id.button_9, "F609FA05");
+        exampleIdToMessage.put(R.id.button_info, "E11EFA05");
 
-        exampleIdToMessage.put(R.id.button_list, "A05FF20D");
-        exampleIdToMessage.put(R.id.button_0, "0x90B92");
-        exampleIdToMessage.put(R.id.button_recall, "A05F42BD");
-        exampleIdToMessage.put(R.id.button_ttx, "A05FE01F");
+        exampleIdToMessage.put(R.id.button_list, "B04FFA05");
+        exampleIdToMessage.put(R.id.button_0, "B847FA05");
+        exampleIdToMessage.put(R.id.button_recall, "BD42FA05");
+        exampleIdToMessage.put(R.id.button_ttx, "F807FA05");
 
-        exampleIdToMessage.put(R.id.button_lang, "A05F4AB5");
-        exampleIdToMessage.put(R.id.button_timeshift, "A05FA857");
-        exampleIdToMessage.put(R.id.button_tv_radio, "A05FAA55");
+        exampleIdToMessage.put(R.id.button_epg, "AC53FA05");
+        exampleIdToMessage.put(R.id.button_up, "BB44FA05");
+        exampleIdToMessage.put(R.id.button_timer, "E817FA05");
 
-        exampleIdToMessage.put(R.id.button_epg, "A05FCA35");
-        exampleIdToMessage.put(R.id.button_up, "0xA05F22DD");
-        exampleIdToMessage.put(R.id.button_timer, "A05FE817");
+        exampleIdToMessage.put(R.id.button_left, "E31CFA05");
+        exampleIdToMessage.put(R.id.button_ok, "A35CFA05");
+        exampleIdToMessage.put(R.id.button_right, "B748FA05");
 
-        exampleIdToMessage.put(R.id.button_left, "0xA05F38C7");
-        exampleIdToMessage.put(R.id.button_ok, "0x80B92");
-        exampleIdToMessage.put(R.id.button_right, "0xA05F12ED");
+        exampleIdToMessage.put(R.id.button_menu, "E01FFA05");
+        exampleIdToMessage.put(R.id.button_down, "E21DFA05");
+        exampleIdToMessage.put(R.id.button_exit, "F50AFA05");
 
-        exampleIdToMessage.put(R.id.button_menu, "A05FF807");
-        exampleIdToMessage.put(R.id.button_down, "0xA05FB847");
-        exampleIdToMessage.put(R.id.button_exit, "A05F50AF");
+        exampleIdToMessage.put(R.id.button_pvr, "FF00FA05");
+        exampleIdToMessage.put(R.id.button_v_format, "FE01FA05");
+        exampleIdToMessage.put(R.id.button_aspect, "E916FA05");
 
-        exampleIdToMessage.put(R.id.button_pvr, "A05F00FF");
-        exampleIdToMessage.put(R.id.button_v_format, "A05F807F");
-        exampleIdToMessage.put(R.id.button_aspect, "A05F6897");
-
-        exampleIdToMessage.put(R.id.button_red, "A05F1AE5");
-        exampleIdToMessage.put(R.id.button_green, "A05F48B7");
-        exampleIdToMessage.put(R.id.button_yellow, "A05F2AD5");
-        exampleIdToMessage.put(R.id.button_blue, "A05F40BF");
-
-        exampleIdToMessage.put(R.id.button_play, "A05FBA45");
-        exampleIdToMessage.put(R.id.button_pause, "A05F32CD");
-        exampleIdToMessage.put(R.id.button_stop, "A05F8A75");
+        exampleIdToMessage.put(R.id.button_play, "A25DFA05");
+        exampleIdToMessage.put(R.id.button_pause, "B34CFA05");
+        exampleIdToMessage.put(R.id.button_stop, "AE51FA05");
 
         exampleIdToMessage.put(R.id.button_rewind, "A05F0AF5");
-        exampleIdToMessage.put(R.id.button_fast_forward, "A05F02FD");
-        exampleIdToMessage.put(R.id.button_previous, "A05FB24D");
+        exampleIdToMessage.put(R.id.button_fast_forward, "AF50FA05");
+        exampleIdToMessage.put(R.id.button_previous, "B24DFA05");
         return exampleIdToMessage;
     }
 
@@ -136,6 +127,37 @@ class ExampleLayoutGenerator {
         exampleIdToMessage.put(R.id.button_french, "button_french");
 
         exampleIdToMessage.put(R.id.button_calibrate, "button_calibrate");
+        return exampleIdToMessage;
+    }
+
+    /**
+     * Generates the data for the example lights layout.
+     * Links the view's id to the message to be sent when it is clicked.
+     * @return the example data
+     */
+    @NonNull
+    public static HashMap<Integer, String> generateLightsExample(){
+        HashMap<Integer, String> exampleIdToMessage = new HashMap<>();
+        exampleIdToMessage.put(R.id.button_power, "BA45FF00");
+        exampleIdToMessage.put(R.id.button_timer, "B946FF00");
+        exampleIdToMessage.put(R.id.button_off, "B847FF00");
+
+
+        exampleIdToMessage.put(R.id.button_1, "BB44FF00");
+        exampleIdToMessage.put(R.id.button_2, "BC43FF00");
+
+        exampleIdToMessage.put(R.id.button_3, "F807FF00");
+        exampleIdToMessage.put(R.id.button_4, "F609FF00");
+
+        exampleIdToMessage.put(R.id.button_5, "E916FF00");
+        exampleIdToMessage.put(R.id.button_6, "F20DFF00");
+
+        exampleIdToMessage.put(R.id.button_7, "F30CFF00");
+        exampleIdToMessage.put(R.id.button_8, "A15EFF00");
+
+        exampleIdToMessage.put(R.id.button_brightness_down, "F708FF00");
+        exampleIdToMessage.put(R.id.button_brightness_up, "A55AFF00");
+
         return exampleIdToMessage;
     }
 }

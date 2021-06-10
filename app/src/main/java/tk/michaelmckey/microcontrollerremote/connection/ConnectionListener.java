@@ -30,7 +30,7 @@ import androidx.annotation.Nullable;
 /**
  * Listens for changes in the connection state
  * @author Michael McKey
- * @version 1.0.0
+ * @version 1.2.2
  */
 public interface ConnectionListener {
     /**

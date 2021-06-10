@@ -39,7 +39,7 @@ import tk.michaelmckey.microcontrollerremote.db.entity.RemoteEntity;
 /**
  * Defines queries for accessing the RemoteEntity table
  * @author Michael McKey
- * @version 1.0.0
+ * @version 1.2.2
  */
 @Dao
 public interface RemoteDao {

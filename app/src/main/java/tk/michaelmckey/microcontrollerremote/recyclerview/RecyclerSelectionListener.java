@@ -30,7 +30,7 @@ import androidx.annotation.NonNull;
  * Receives notifications when the state of a RecyclerView ViewHolder has been changed
  * @param <E> the type of the object displayed in the RecyclerView.
  * @author Michael McKey
- * @version 1.0.0
+ * @version 1.2.2
  */
 public interface RecyclerSelectionListener<E> {
     /**

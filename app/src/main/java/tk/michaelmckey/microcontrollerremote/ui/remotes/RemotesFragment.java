@@ -26,7 +26,6 @@ package tk.michaelmckey.microcontrollerremote.ui.remotes;
 
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Toast;
 
 import java.util.HashMap;
 import java.util.Objects;
@@ -42,7 +41,7 @@ import tk.michaelmckey.microcontrollerremote.recyclerview.RecyclerFragment;
 /**
  * Manages all user interactions within the Remotes screen.
  * @author Michael McKey
- * @version 1.0.0
+ * @version 1.2.2
  */
 public class RemotesFragment extends RecyclerFragment<RemoteEntity> {
     /**
@@ -67,7 +66,8 @@ public class RemotesFragment extends RecyclerFragment<RemoteEntity> {
 
         //makes sure that the nav controller hasn't already navigated away from the fragment
         // (due to another click at the same time - e.g. double clicking the view)
-        if (Objects.requireNonNull(navController.getCurrentDestination()).getId() == R.id.nav_remotes) {
+        if (Objects.requireNonNull(navController.getCurrentDestination()).getId()
+                == R.id.nav_remotes) {
             RemotesFragmentDirections.ActionNavRemotesToNavCurrentRemote action =
                     RemotesFragmentDirections.actionNavRemotesToNavCurrentRemote();
             action.setRemoteId(remote.getId());

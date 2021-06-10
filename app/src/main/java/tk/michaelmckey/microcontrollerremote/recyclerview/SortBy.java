@@ -27,7 +27,7 @@ package tk.michaelmckey.microcontrollerremote.recyclerview;
 /**
  * The property by which the items are sorted
  * @author Michael McKey
- * @version 1.0.0
+ * @version 1.2.2
  */
 public enum SortBy {
     /**

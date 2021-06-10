@@ -45,7 +45,7 @@ import tk.michaelmckey.microcontrollerremote.db.entity.RemoteEntity;
  * Manages the all of the remote Layouts.
  * Manages creating, retrieving, modifying and deleting layouts.
  * @author Michael Mckey
- * @version 1.0.0
+ * @version 1.2.2
  */
 class RemoteLayoutManager {
     @NonNull private static final String TAG = "RemoteLayoutManager";
@@ -64,7 +64,7 @@ class RemoteLayoutManager {
     /**
      * Initialises the RemoteLayoutManager
      * @param context the context for accessing files
-     * @param fileName the name of the file that contains the layouts
+     * @param fileName the author_name_text_view of the file that contains the layouts
      */
     public RemoteLayoutManager(@NonNull Context context, @NonNull String fileName){
         mContext = context;
@@ -141,9 +141,9 @@ class RemoteLayoutManager {
     }
 
     /**
-     * Sets the Code(codeId) associated with the given view(resource name)
+     * Sets the Code(codeId) associated with the given view(resource author_name_text_view)
      * @param remote the selected remote
-     * @param resourceName the resource name of the view the code Id is associated with
+     * @param resourceName the resource author_name_text_view of the view the code Id is associated with
      * @param code the code to associate with the view
      */
     public void setCorrespondingCode(@NonNull RemoteEntity remote,

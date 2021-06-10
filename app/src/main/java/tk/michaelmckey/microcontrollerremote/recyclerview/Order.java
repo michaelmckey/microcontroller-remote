@@ -26,7 +26,7 @@ package tk.michaelmckey.microcontrollerremote.recyclerview;
 /**
  * The order that items appear in the list
  * @author Michael McKey
- * @version 1.0.0
+ * @version 1.2.2
  */
 public enum Order {
     /**

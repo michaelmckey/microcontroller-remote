@@ -52,6 +52,7 @@ import androidx.navigation.Navigation;
 import tk.michaelmckey.microcontrollerremote.R;
 import tk.michaelmckey.microcontrollerremote.connection.ConnectionListener;
 import tk.michaelmckey.microcontrollerremote.databinding.LayoutLargeBinding;
+import tk.michaelmckey.microcontrollerremote.databinding.LayoutLightsBinding;
 import tk.michaelmckey.microcontrollerremote.databinding.LayoutMediumBinding;
 import tk.michaelmckey.microcontrollerremote.databinding.LayoutSmallBinding;
 import tk.michaelmckey.microcontrollerremote.databinding.LayoutToyBinding;
@@ -62,7 +63,7 @@ import tk.michaelmckey.microcontrollerremote.db.entity.RemoteEntity;
 /**
  * Manages all user interactions within the Current RemoteEntity screen.
  * @author Michael McKey
- * @version 1.0.0
+ * @version 1.2.2
  */
 public class CurrentRemoteFragment extends Fragment implements ConnectionListener {
     @NonNull
@@ -73,6 +74,8 @@ public class CurrentRemoteFragment extends Fragment implements ConnectionListene
     private ViewGroup mRemoteLayoutContainer;
     @Nullable
     private Toast mConnectingToast;
+    @Nullable
+    private Toast mReceivedMessageToast;
 
     /**
      * Inflates the correct {@link Layout} for the selected remote.
@@ -130,6 +133,10 @@ public class CurrentRemoteFragment extends Fragment implements ConnectionListene
                 mRemoteLayoutContainer =
                         LayoutToyBinding.inflate(getLayoutInflater()).getRoot();
                 break;
+            case LIGHTS:
+                mRemoteLayoutContainer =
+                        LayoutLightsBinding.inflate(getLayoutInflater()).getRoot();
+                break;
         }
 
         setHasOptionsMenu(true);
@@ -174,10 +181,23 @@ public class CurrentRemoteFragment extends Fragment implements ConnectionListene
             //takes each message and splits it into the corresponding key and value
             String[] messageParts = message.split(":");
             if(messageParts.length == 2) {
-                String key = messageParts[0];//the name of the variable sent
+                String key = messageParts[0];//the author_name_text_view of the variable sent
                 String value = messageParts[1];//the value of that variable
                 if (key.equals(getString(R.string.received_message_key))) {
                     //value is the message
+
+                    if(mReceivedMessageToast != null){
+                        //gets rid of the last message displayed
+                        mReceivedMessageToast.cancel();
+                        mReceivedMessageToast = null;
+                    }
+
+                    //displays a new message
+                    mReceivedMessageToast = Toast.makeText(requireContext(),
+                            getString(R.string.received_command_prefix) + value,
+                            Toast.LENGTH_SHORT);
+                    mReceivedMessageToast.show();
+
                     try {
                         assert mCurrentRemoteViewModel != null;
                         if (mCurrentRemoteViewModel.getCodesWithMessage(value).isEmpty()) {
@@ -186,9 +206,6 @@ public class CurrentRemoteFragment extends Fragment implements ConnectionListene
                                     value,
                                     Calendar.getInstance().getTime().getTime());
                             mCurrentRemoteViewModel.insert(code);
-                            Toast.makeText(requireContext(),
-                                    message,
-                                    Toast.LENGTH_SHORT).show();
                         }
                     } catch (@NonNull ExecutionException | InterruptedException e) {
                         e.printStackTrace();
@@ -214,7 +231,10 @@ public class CurrentRemoteFragment extends Fragment implements ConnectionListene
                 Drawable backgroundDrawable = ResourcesCompat.getDrawable(getResources(),
                         drawableId,
                         null);
-                mRemoteLayoutContainer.setBackground(backgroundDrawable);
+                //prevents errors when triggered from background thread
+                requireActivity().runOnUiThread(() ->
+                        mRemoteLayoutContainer.setBackground(backgroundDrawable));
+
             }
         }
     }
@@ -233,7 +253,9 @@ public class CurrentRemoteFragment extends Fragment implements ConnectionListene
                 Drawable backgroundDrawable = ResourcesCompat.getDrawable(getResources(),
                         drawableId,
                         null);
-                mRemoteLayoutContainer.setBackground(backgroundDrawable);
+                //prevents errors when triggered from background thread
+                requireActivity().runOnUiThread(() ->
+                        mRemoteLayoutContainer.setBackground(backgroundDrawable));
             }else{
                 Log.e("onDisconnect","mRemoteLayoutContainer is null");
             }
@@ -251,6 +273,11 @@ public class CurrentRemoteFragment extends Fragment implements ConnectionListene
         if(mConnectingToast != null){
             mConnectingToast.cancel();
             mConnectingToast = null;
+        }
+
+        if(mReceivedMessageToast != null){
+            mReceivedMessageToast.cancel();
+            mReceivedMessageToast = null;
         }
 
         super.onPause();
@@ -280,11 +307,6 @@ public class CurrentRemoteFragment extends Fragment implements ConnectionListene
         String prefix = getString(R.string.current_remote_fragment_prefix);
         String remoteTitle = mCurrentRemoteViewModel.getSelectedRemote().getTitle();
         toolbar.setTitle(prefix + remoteTitle);
-    }
-
-    @Override
-    public void onDestroyView() {
-        super.onDestroyView();
     }
 
     /**
@@ -375,7 +397,8 @@ public class CurrentRemoteFragment extends Fragment implements ConnectionListene
 
                 //makes sure that the nav controller hasn't already navigated away from the fragment
                 // (due to another click at the same time - e.g. double clicking the view)
-                if (Objects.requireNonNull(navController.getCurrentDestination()).getId() == R.id.nav_current_remote) {
+                if (Objects.requireNonNull(navController.getCurrentDestination()).getId()
+                        == R.id.nav_current_remote) {
                     CurrentRemoteFragmentDirections.ActionNavCurrentRemoteToNavCommands action =
                             CurrentRemoteFragmentDirections.actionNavCurrentRemoteToNavCommands();
                     action.setCalledForResult(true);
