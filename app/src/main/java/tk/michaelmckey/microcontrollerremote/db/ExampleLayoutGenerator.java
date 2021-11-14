@@ -122,6 +122,8 @@ class ExampleLayoutGenerator {
         exampleIdToMessage.put(R.id.button_brightness_up, "button_brightness_up");
         exampleIdToMessage.put(R.id.button_brightness_down, "button_brightness_down");
 
+        exampleIdToMessage.put(R.id.button_auto, "button_auto");
+
         exampleIdToMessage.put(R.id.button_english, "button_english");
         exampleIdToMessage.put(R.id.button_spanish, "button_spanish");
         exampleIdToMessage.put(R.id.button_french, "button_french");

@@ -141,10 +141,11 @@
     <string name="baud_rate_not_int_error">The BAUD rate should be an integer</string>
     <string name="invalid_url_error">The URL entered isn\'t a valid</string>
     <string name="invalid_mac_address_error">The MAC address entered isn\'t valid</string>
+    <string name="button_auto_text">Auto</string>
     <string name="button_spanish_text">Spanish</string>
+    <string name="button_english_text">English</string>
     <string name="button_french_text">French</string>
     <string name="button_calibrate_text">Calibrate</string>
-    <string name="button_english_text">English</string>
     <string name="connecting">Connecting…</string>
     <string name="received_command_prefix">Received command:</string>
     <string name="searchview_hint">Search</string>

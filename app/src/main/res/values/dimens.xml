@@ -62,4 +62,7 @@
     <dimen name="author_email_text_size">14sp</dimen>
     <dimen name="sort_by_radio_button_text_size">18sp</dimen>
     <dimen name="sort_by_label_text_size">24sp</dimen>
+
+
+    <dimen name="toy_layout_long_width">130sp</dimen>
 </resources>

@@ -24,6 +24,7 @@
 
 package tk.michaelmckey.microcontrollerremote.connection;
 
+import android.annotation.SuppressLint;
 import android.app.PendingIntent;
 import android.content.BroadcastReceiver;
 import android.content.Context;
@@ -80,6 +81,7 @@ public class SerialConnection extends Connection implements SerialInputOutputMan
     /**
      * Connects to the device that was chosen last
      */
+    @SuppressLint("UnspecifiedImmutableFlag")//can't specify flag in
     @Override
     public void connect() {
         if(mBaudRate > 0) {
@@ -100,7 +102,13 @@ public class SerialConnection extends Connection implements SerialInputOutputMan
             } else {
                 Intent grantUsbIntent = new Intent(INTENT_ACTION_GRANT_USB);
                 //notifies app when permission is granted
-                PendingIntent pi = PendingIntent.getBroadcast(mContext, 0, grantUsbIntent, 0);
+
+                PendingIntent pi;
+                if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.M) {
+                    pi = PendingIntent.getBroadcast(mContext, 0, grantUsbIntent, PendingIntent.FLAG_IMMUTABLE);
+                }else{
+                    pi = PendingIntent.getBroadcast(mContext, 0, grantUsbIntent, 0);
+                }
                 manager.requestPermission(driver.getDevice(), pi);
                 disconnected(mContext.getString(R.string.serial_permission_not_granted));
                 return;
