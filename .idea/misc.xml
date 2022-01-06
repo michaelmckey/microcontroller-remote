@@ -8,6 +8,7 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/mjmck/Documents/AndroidStudioProjects/microcontroller-remote/app/src/main/res/menu/activity_main_drawer.xml" value="0.1" />
         <entry key="..\:/Users/mjmck/Documents/android_studio/Microcontroller Remote6.1.10/microcontroller_remote/app/src/main/res/layout/app_bar_main.xml" value="0.14270833333333333" />
         <entry key="..\:/Users/mjmck/Documents/android_studio/Microcontroller Remote6.1.10/microcontroller_remote/app/src/main/res/layout/dialog_remote_editor.xml" value="0.14270833333333333" />
       </map>
@@ -259,7 +260,7 @@
       </value>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" project-jdk-name="1.8" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">

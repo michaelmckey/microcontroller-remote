@@ -69,6 +69,8 @@ public class BluetoothConnection extends Connection{
      */
     BluetoothConnection(@NonNull Context context){
         super(context);
+        //todo add a way to disable bluetooth if it isn't supported on the current platform
+        // BluetoothAdapter test = BluetoothAdapter.getDefaultAdapter();
         scanForDevices();
     }
 
