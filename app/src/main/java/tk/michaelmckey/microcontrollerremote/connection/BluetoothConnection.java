@@ -24,10 +24,12 @@
 
 package tk.michaelmckey.microcontrollerremote.connection;
 
+import android.Manifest;
 import android.bluetooth.BluetoothAdapter;
 import android.bluetooth.BluetoothDevice;
 import android.bluetooth.BluetoothSocket;
 import android.content.Context;
+import android.content.pm.PackageManager;
 import android.util.Log;
 
 import java.io.ByteArrayOutputStream;
@@ -41,6 +43,8 @@ import java.util.UUID;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.core.app.ActivityCompat;
+
 import tk.michaelmckey.microcontrollerremote.R;
 
 /**
@@ -48,7 +52,7 @@ import tk.michaelmckey.microcontrollerremote.R;
  * @author Michael McKey
  * @version 1.2.2
  */
-public class BluetoothConnection extends Connection{
+public class BluetoothConnection extends Connection {
     @NonNull
     private static final BluetoothAdapter mBluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
     @NonNull
@@ -67,10 +71,8 @@ public class BluetoothConnection extends Connection{
      * Starts scan for Bluetooth Classic devices.
      * @param context The context of the class which manages the connection
      */
-    BluetoothConnection(@NonNull Context context){
+    BluetoothConnection(@NonNull Context context) {
         super(context);
-        //todo add a way to disable bluetooth if it isn't supported on the current platform
-        // BluetoothAdapter test = BluetoothAdapter.getDefaultAdapter();
         scanForDevices();
     }
 
@@ -79,31 +81,37 @@ public class BluetoothConnection extends Connection{
      */
     @Override
     public void connect() {
-        if(!mMacAddress.isEmpty()) {
-            if (mBluetoothAdapter.isEnabled()) {//checks if bluetooth is turned ON
-                mBluetoothAdapter.cancelDiscovery();
-                try {
-                    BluetoothDevice device = mBluetoothAdapter.getRemoteDevice(mMacAddress);
-                    mBluetoothSocket = device.createRfcommSocketToServiceRecord(BLUETOOTH_SPP);
-                    mBluetoothSocket.connect();
-                    if (mBluetoothSocket.isConnected()) {
-                        connected();
-                        checkForMessages();
-                    } else {
-                        disconnected(mContext.getString(R.string.not_connected));
-                    }
-                } catch (IllegalArgumentException e){
-                    e.printStackTrace();
-                    disconnected(mContext.getString(R.string.invalid_bluetooth_address));
-                }catch (IOException e) {
-                    e.printStackTrace();
-                    disconnected(mContext.getString(R.string.io_exception));
-                }
-            } else {
-                disconnected(mContext.getString(R.string.turn_on_bluetooth));
-            }
-        }else{
+        if (mMacAddress.isEmpty()) {
             disconnected(mContext.getString(R.string.mac_address_is_empty));
+            return;
+        }
+        if(!mBluetoothAdapter.isEnabled()) {//checks if bluetooth is turned ON
+            disconnected(mContext.getString(R.string.turn_on_bluetooth));
+            return;
+        }
+
+        if (ActivityCompat.checkSelfPermission(super.mContext, Manifest.permission.BLUETOOTH_SCAN) != PackageManager.PERMISSION_GRANTED) {
+            disconnected(mContext.getString(R.string.bluetooth_permission_not_granted));
+            return;
+        }
+
+        mBluetoothAdapter.cancelDiscovery();
+        try {
+            BluetoothDevice device = mBluetoothAdapter.getRemoteDevice(mMacAddress);
+            mBluetoothSocket = device.createRfcommSocketToServiceRecord(BLUETOOTH_SPP);
+            mBluetoothSocket.connect();
+            if (mBluetoothSocket.isConnected()) {
+                connected();
+                checkForMessages();
+            } else {
+                disconnected(mContext.getString(R.string.not_connected));
+            }
+        } catch (IllegalArgumentException e) {
+            e.printStackTrace();
+            disconnected(mContext.getString(R.string.invalid_bluetooth_address));
+        } catch (IOException e) {
+            e.printStackTrace();
+            disconnected(mContext.getString(R.string.io_exception));
         }
     }
 
@@ -111,7 +119,7 @@ public class BluetoothConnection extends Connection{
      * Creates a connection with the given device
      * @param macAddress the mac address of the Bluetooth classic device chosen to connect to
      */
-    public void connect(@NonNull String macAddress){
+    public void connect(@NonNull String macAddress) {
         mMacAddress = macAddress;
         connect();
     }
@@ -121,7 +129,7 @@ public class BluetoothConnection extends Connection{
      */
     private void checkForMessages() {
         Runnable r = () -> {
-            while(mConnected) {//stops checking in background if disconnected
+            while (mConnected) {//stops checking in background if disconnected
                 if (mBluetoothSocket != null) {
                     if (mBluetoothSocket.isConnected()) {
                         try {
@@ -153,8 +161,8 @@ public class BluetoothConnection extends Connection{
      * Disconnects from the remote device it is currently connected to.
      * Can reconnect by calling the connect method
      */
-    public void disconnect(){
-        if(mBluetoothSocket !=null){
+    public void disconnect() {
+        if (mBluetoothSocket != null) {
             try {
                 mBluetoothSocket.close();
             } catch (IOException e) {
@@ -169,8 +177,13 @@ public class BluetoothConnection extends Connection{
      * Sends a message to the connected device
      * @param message the message to send as text
      */
-    public void sendMessage(@NonNull String message){
-        if(mConnected) {
+    public void sendMessage(@NonNull String message) {
+        if(!mBluetoothAdapter.isEnabled()) {//checks if bluetooth is turned ON
+            disconnected(mContext.getString(R.string.turn_on_bluetooth));
+            return;
+        }
+
+        if (mConnected) {
             assert mBluetoothSocket != null;
             byte[] data = (message + NEW_LINE).getBytes();
 
@@ -181,7 +194,7 @@ public class BluetoothConnection extends Connection{
                 e.printStackTrace();
                 disconnected(mContext.getString(R.string.io_exception));
             }
-        }else{
+        } else {
             Log.d("BluetoothConnection", "Not connected");
         }
     }
@@ -191,18 +204,27 @@ public class BluetoothConnection extends Connection{
      * @return - the Bluetooth Classic Devices
      */
     @NonNull
-    public static List<BluetoothDevice> getDevices(){
+    public static List<BluetoothDevice> getDevices() {
         return Collections.unmodifiableList(mDevices);
     }
 
     /**
      * Gets a list of paired Bluetooth Classic devices
      */
-    public static void scanForDevices(){
+    public void scanForDevices() {
         mDevices.clear();
+        if (ActivityCompat.checkSelfPermission(super.mContext, Manifest.permission.BLUETOOTH_SCAN) != PackageManager.PERMISSION_GRANTED) {
+            disconnected(super.mContext.getString(R.string.bluetooth_permission_not_granted));
+            return;
+        }
+        if(!mBluetoothAdapter.isEnabled()){
+            disconnected(super.mContext.getString(R.string.bluetooth_is_turned_off));
+            return;
+        }
+
         for (BluetoothDevice device : mBluetoothAdapter.getBondedDevices()) {
-            if(device.getType() == BluetoothDevice.DEVICE_TYPE_CLASSIC
-                    || device.getType() == BluetoothDevice.DEVICE_TYPE_DUAL){
+            if (device.getType() == BluetoothDevice.DEVICE_TYPE_CLASSIC
+                    || device.getType() == BluetoothDevice.DEVICE_TYPE_DUAL) {
                 mDevices.add(device);
             }
         }

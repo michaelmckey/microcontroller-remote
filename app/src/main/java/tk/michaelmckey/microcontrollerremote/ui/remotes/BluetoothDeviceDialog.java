@@ -24,10 +24,13 @@
 
 package tk.michaelmckey.microcontrollerremote.ui.remotes;
 
+import android.Manifest;
 import android.app.Dialog;
 import android.bluetooth.BluetoothDevice;
+import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.widget.ArrayAdapter;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -36,6 +39,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.annotation.RequiresPermission;
 import androidx.appcompat.app.AlertDialog;
+import androidx.core.app.ActivityCompat;
 import androidx.fragment.app.DialogFragment;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
@@ -72,12 +76,17 @@ public class BluetoothDeviceDialog extends DialogFragment {
         //gets a list of bluetooth devices
         List<BluetoothDevice> bluetoothDevices = ConnectionManager.getBluetoothDevices();
         List<String> bluetoothDeviceNames = new ArrayList<>();
-        for (BluetoothDevice bluetoothDevice : bluetoothDevices) {
-            String name = bluetoothDevice.getName();
-            if (name != null) {
-                bluetoothDeviceNames.add(bluetoothDevice.getName());
+        if (ActivityCompat.checkSelfPermission(super.requireContext(), Manifest.permission.BLUETOOTH_CONNECT) == PackageManager.PERMISSION_GRANTED) {
+            for (BluetoothDevice bluetoothDevice : bluetoothDevices) {
+                String name = bluetoothDevice.getName();
+                if (name != null) {
+                    bluetoothDeviceNames.add(bluetoothDevice.getName());
+                }
             }
+        }else{
+            Toast.makeText(requireActivity(), requireContext().getString(R.string.bluetooth_permission_not_granted), Toast.LENGTH_SHORT).show();
         }
+
 
         //initialises the layout
         ArrayAdapter<String> connectionInfoAa = new ArrayAdapter<>(getContext(),

@@ -24,7 +24,6 @@
 
 package tk.michaelmckey.microcontrollerremote.recyclerview;
 
-import android.annotation.SuppressLint;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
@@ -157,7 +156,6 @@ class RecyclerAdapter<E extends RecyclerElement>
      * Filters and sorts the RecyclerView(using the query, the sort by and the order).
      * Uses the {@link #compareElements} function
      */
-    @SuppressLint("NotifyDataSetChanged")
     private void filter(){
         List<E> filteredList = new ArrayList<>();
         //filters the list
@@ -351,7 +349,6 @@ class RecyclerAdapter<E extends RecyclerElement>
      * Toggles if the adapter is currently in multi select action mode
      * @param state true if it should be in multi select mode
      */
-    @SuppressLint("NotifyDataSetChanged")
     public void setMultiSelect(boolean state){
         //ensures the multi select action mode is available
         if(mMultiSelectAvailable) {

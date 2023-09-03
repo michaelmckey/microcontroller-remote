@@ -245,8 +245,10 @@ public class CurrentRemoteFragment extends Fragment implements ConnectionListene
     @Override
     public void onDisconnected(@Nullable String reason) {
         if (!isDetached()) {//for getResources()
+
             if(reason != null) {
-                Toast.makeText(requireActivity(), reason, Toast.LENGTH_SHORT).show();
+                requireActivity().runOnUiThread(() ->
+                        Toast.makeText(requireActivity(), reason, Toast.LENGTH_SHORT).show());
             }
             if(mRemoteLayoutContainer != null) {
                 int drawableId = R.drawable.background_black;

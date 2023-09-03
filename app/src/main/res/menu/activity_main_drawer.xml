@@ -42,6 +42,8 @@
                     android:title="@string/menu_licences"/>
                 <item android:id="@+id/nav_tutorial"
                     android:title="@string/menu_tutorial"/>
+                <item android:id="@+id/nav_privacy_policy"
+                    android:title="@string/menu_privacy_policy"/>
             </menu>
         </item>
     </group>

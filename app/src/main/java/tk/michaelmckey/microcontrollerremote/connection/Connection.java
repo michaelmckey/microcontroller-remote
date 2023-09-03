@@ -106,11 +106,9 @@ public abstract class Connection {
      * @param reason the reason the device has been disconnected(null if deliberately closed)
      */
     void disconnected(@Nullable String reason){
-        if(mConnected) {
-            mConnected = false;
-            for (ConnectionListener listener : listeners) {
-                listener.onDisconnected(reason);
-            }
+        mConnected = false;
+        for (ConnectionListener listener : listeners) {
+            listener.onDisconnected(reason);
         }
     }
 
@@ -118,7 +116,7 @@ public abstract class Connection {
      * Notifies all listeners that the device has been connected to
      */
     void connected(){
-        if(!mConnected){
+        if(!mConnected){//only notifies device if just connected
             mConnected = true;
             for(ConnectionListener listener : listeners){
                 listener.onConnected();

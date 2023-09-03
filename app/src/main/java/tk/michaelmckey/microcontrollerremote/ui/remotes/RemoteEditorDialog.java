@@ -86,7 +86,8 @@ public class RemoteEditorDialog extends DialogFragment {
     @NonNull
     @Override
     public Dialog onCreateDialog(@Nullable Bundle savedInstanceState) {
-        ConnectionManager.refreshAvailableDevices();
+        ConnectionManager connectionManager = new ConnectionManager(requireContext());
+        connectionManager.refreshAvailableDevices();
         AlertDialog.Builder builder = new AlertDialog.Builder(requireContext());
 
         @NonNull DialogRemoteEditorBinding binding =

@@ -24,18 +24,20 @@
 
 package tk.michaelmckey.microcontrollerremote.ui.main;
 
+import android.Manifest;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.widget.SearchView;
-
-import com.google.android.gms.oss.licenses.OssLicensesMenuActivity;
-import com.google.android.material.navigation.NavigationView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.lifecycle.ViewModelProvider;
@@ -43,6 +45,13 @@ import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
+
+import com.google.android.gms.oss.licenses.OssLicensesMenuActivity;
+import com.google.android.material.navigation.NavigationView;
+
+import java.util.Arrays;
+import java.util.LinkedList;
+
 import tk.michaelmckey.microcontrollerremote.R;
 import tk.michaelmckey.microcontrollerremote.databinding.ActivityMainBinding;
 
@@ -59,6 +68,7 @@ public class MainActivity extends AppCompatActivity
     private DrawerLayout mDrawer;
     @Nullable
     private NavController mNavController;
+    private final int BLUETOOTH_SCAN_PERMISSION_REQUEST_CODE = 42;
 
     /**
      * Creates all fragments, sets up toolbar, and sets up NavController.
@@ -67,7 +77,7 @@ public class MainActivity extends AppCompatActivity
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        tk.michaelmckey.microcontrollerremote.databinding.ActivityMainBinding binding =
+        ActivityMainBinding binding =
                 ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
@@ -87,6 +97,50 @@ public class MainActivity extends AppCompatActivity
                 mAppBarConfiguration);
         binding.navView.setNavigationItemSelectedListener(this);
         binding.navView.bringToFront();
+        getBluetoothPermission();
+    }
+
+
+    public void getBluetoothPermission(){
+        LinkedList<String> permissionsToRequestDynamic = new LinkedList<>();
+        LinkedList<String> permissionsNeeded = new LinkedList<>();
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
+            permissionsNeeded.add(Manifest.permission.BLUETOOTH_SCAN);
+            permissionsNeeded.add(Manifest.permission.BLUETOOTH_CONNECT);
+            //permissionsNeeded.add(Manifest.permission.BLUETOOTH_ADVERTISE);
+
+            for(String permission : permissionsNeeded){
+                if(checkSelfPermission(permission) != PackageManager.PERMISSION_GRANTED){
+                    if(shouldShowRequestPermissionRationale(permission)){
+                        Toast.makeText(this, R.string.bluetooth_permission_rationale, Toast.LENGTH_SHORT).show();
+                    }
+                    permissionsToRequestDynamic.add(permission);
+                }
+            }
+        }//if api is 30 or below could add permission to request in here(if need extra permissions
+
+        Object[] objectArray = permissionsToRequestDynamic.toArray();
+        if(objectArray.length != 0) {
+            //there are permission to request
+            String[] permissionsToRequest = Arrays.copyOf(objectArray, objectArray.length, String[].class);
+            ActivityCompat.requestPermissions(this, permissionsToRequest, BLUETOOTH_SCAN_PERMISSION_REQUEST_CODE);
+        }
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        if(requestCode == BLUETOOTH_SCAN_PERMISSION_REQUEST_CODE){
+            for(int i = 0; i<permissions.length; i++){
+                String permission = permissions[i];
+                int result = grantResults[i];
+                if(result != PackageManager.PERMISSION_GRANTED){
+                    Toast.makeText(this, "Need "+ permission + " to connect", Toast.LENGTH_SHORT).show();
+                }
+            }
+            //permission has been granted
+        }
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
     }
 
     /**
@@ -104,6 +158,9 @@ public class MainActivity extends AppCompatActivity
         }else if(item.getItemId() == R.id.nav_tutorial){
             //redirects the user to the instructions
             startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(getString(R.string.tutorial_link))));
+        }else if(item.getItemId() == R.id.nav_privacy_policy){
+            //redirects the user to the instructions
+            startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(getString(R.string.privacy_policy_link))));
         }
         assert mNavController != null;
         return NavigationUI.onNavDestinationSelected(item, mNavController)

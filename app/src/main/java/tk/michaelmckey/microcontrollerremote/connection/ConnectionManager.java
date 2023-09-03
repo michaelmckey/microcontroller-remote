@@ -74,8 +74,8 @@ public class ConnectionManager extends Connection implements ConnectionListener 
     /**
      * Refreshes the list of devices which the user can connect to
      */
-    public static void refreshAvailableDevices(){
-        BluetoothConnection.scanForDevices();
+    public void refreshAvailableDevices(){
+        mBluetoothConnection.scanForDevices();
         mBluetoothDevices = BluetoothConnection.getDevices();
     }
 
